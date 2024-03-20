@@ -79,6 +79,17 @@ Then create a database on heroku
 heroku addons:create heroku-postgresql:mini
 ```
 
+Extract DATABASE_URL from Heroku Dashboard
+
+Then copy/paste values (adapt from DATABASE_URL)
+
+DB_CONNECTION=psql
+DB_HOST=xxx.compute-1.amazonaws.com
+DB_PORT=5432
+DB_DATABASE=xxx
+DB_USERNAME=xxx
+DB_PASSWORD=xxx
+
 Push to Heroku 
 
 ```shell
