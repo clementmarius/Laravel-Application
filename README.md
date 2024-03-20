@@ -15,6 +15,8 @@ composer --version
 # 2.7.2
 git --version
 # 2.34.1
+psql --version
+# 14.11
 ```
 
 [Installation on Linux from scratch](https://saaslit.com/blog/laravel/how-to-install-laravel-11-on-linux)
