@@ -71,6 +71,12 @@ Then copy/paste the generated key (replace "..." by the key)
 heroku config:set APP_KEY=...
 ```
 
+Then create a database on heroku
+
+```shell
+heroku addons:create heroku-postgresql:mini
+```
+
 Push to Heroku 
 
 ```shell
