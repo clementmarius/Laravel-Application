@@ -49,3 +49,12 @@ And open browser at http://localhost:8000
 heroku create myapplaravel
 ```
 
+Check you have the heroku remote
+
+```shell
+git remote -v
+# heroku	https://git.heroku.com/myapplaravel.git (fetch)
+# heroku	https://git.heroku.com/myapplaravel.git (push)
+# origin	git@github.com:<githubuser>/myapplaravel.git (fetch)
+# origin	git@github.com:<githubuser>/myapplaravel.git (push)
+```
