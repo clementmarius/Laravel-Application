@@ -58,3 +58,15 @@ git remote -v
 # origin	git@github.com:<githubuser>/myapplaravel.git (fetch)
 # origin	git@github.com:<githubuser>/myapplaravel.git (push)
 ```
+
+Generate a key
+
+```shell
+php artisan key:generate --show
+```
+
+Then copy/paste the generated key (replace "..." by the key)
+
+```shell
+heroku config:set APP_KEY=...
+```
