@@ -40,3 +40,5 @@ Then launch the server locally
 php artisan serve
 ```
 
+And open browser at http://localhost:8000
+
