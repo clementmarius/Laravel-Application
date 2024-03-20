@@ -30,6 +30,7 @@ Wait for a minute, then
 ```shell
 php -r "file_exists('.env') || copy('.env.example', '.env');"
 php artisan key:generate --ansi
+php -r "file_exists('database/database.sqlite') || touch('database/database.sqlite');"
 
 ```
 
