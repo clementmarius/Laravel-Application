@@ -34,9 +34,9 @@ php -r "file_exists('database/database.sqlite') || touch('database/database.sqli
 php artisan migrate --ansi
 ```
 
-
-## Launch the server locally
+Then launch the server locally
 
 ```
 php artisan serve
 ```
+
