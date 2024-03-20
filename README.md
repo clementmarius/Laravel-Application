@@ -15,6 +15,8 @@ composer --version
 # 2.7.2
 git --version
 # 2.34.1
+psql --version
+# 14.11
 ```
 
 [Installation on Linux from scratch](https://saaslit.com/blog/laravel/how-to-install-laravel-11-on-linux)
@@ -42,3 +44,64 @@ php artisan serve
 
 And open browser at http://localhost:8000
 
+## Deploy to heroku
+
+
+```
+heroku create myapplaravel
+```
+
+Check you have the heroku remote
+
+```shell
+git remote -v
+# heroku	https://git.heroku.com/myapplaravel.git (fetch)
+# heroku	https://git.heroku.com/myapplaravel.git (push)
+# origin	git@github.com:<githubuser>/myapplaravel.git (fetch)
+# origin	git@github.com:<githubuser>/myapplaravel.git (push)
+```
+
+Generate a key
+
+```shell
+php artisan key:generate --show
+```
+
+Then copy/paste the generated key (replace "..." by the key)
+
+```shell
+heroku config:set APP_KEY=...
+```
+
+Then create a database on heroku
+
+```shell
+heroku addons:create heroku-postgresql:mini
+```
+
+
+Extract DATABASE_URL from Heroku Dashboard
+
+(----------completer doc----------------------)
+
+Then copy/paste values (adapt from DATABASE_URL)
+
+DB_CONNECTION=pgsql
+DB_HOST=xxx.compute-1.amazonaws.com
+DB_PORT=5432
+DB_DATABASE=xxx
+DB_USERNAME=xxx
+DB_PASSWORD=xxx
+
+Push to Heroku 
+
+```shell
+git push heroku main
+```
+
+To run migration, run
+
+```shell
+heroku run bash
+$> php artisan migrate --ansi
+```
