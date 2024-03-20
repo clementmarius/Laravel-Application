@@ -24,3 +24,9 @@ git --version
 ```
 composer install
 ```
+
+## Launch the server locally
+
+```
+php artisan serve
+```
