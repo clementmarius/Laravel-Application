@@ -1,50 +1,44 @@
-Prerequisites :
+# Laravel 11 starter kit
 
-Getting started Laravel 11 - Linux : 
+## Prerequisites
 
-# install dependencies
-npm install
-node install
-
-
-## sqlite 3 
-sudo apt update
-sudo apt install sqlite3
+```
 sqlite3 --version
-
-## PHP 8.3
-sudo apt update && sudo apt upgrade -y
-sudo add-apt-repository ppa:ondrej/php
-sudo apt update
-sudo apt-get install -y php8.3-cli php8.3-sqlite3 php8.3-common php8.3-fpm php8.3-zip php8.3-gd php8.3-mbstring php8.3-curl php8.3-xml php8.3-bcmath
+# 3.37.2
 php --version
+# 8.3.4
+node --version
+# 20.11.0
+npm --version
+# 10.2.4
+composer --version
+# 2.7.2
+git --version
+# 2.34.1
+```
 
+[Installation on Linux from scratch](https://saaslit.com/blog/laravel/how-to-install-laravel-11-on-linux)
 
-## composer install
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-php -r "if (hash_file('sha384', 'composer-setup.php') === 'dac665fdc30fdd8ec78b38b9800061b4150413ff2e3b6f88543c636f7cd84f6db9189d43a81e5503cda447da73c7e5b6') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-php composer-setup.php
-php -r "unlink('composer-setup.php');"
-sudo cp composer.phar /usr/local/bin/composer
-composer  --version
+## Local installation
 
+```
+composer install
+```
 
-## Create a default Laravel 11 application
-composer create-project laravel/laravel=11 MyApp
+Wait for a minute, then
 
-# Then launch the server:
-php artisan serve
-
-Access it at http://localhost:8000
-
-The Laravel sample project is now up and running!
-
-# Postscript if you don't create the app you might need few more commands 
-## create .env file and generate the application key
-
-cp .env.example .env
+```shell
+php -r "file_exists('.env') || copy('.env.example', '.env');"
 php artisan key:generate --ansi
+php -r "file_exists('database/database.sqlite') || touch('database/database.sqlite');"
+php artisan migrate --ansi
+```
 
-Licence :
+Then launch the server locally
 
-To be determined 
+```
+php artisan serve
+```
+
+And open browser at http://localhost:8000
+
