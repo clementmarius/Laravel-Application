@@ -25,6 +25,14 @@ git --version
 composer install
 ```
 
+Wait for a minute, then
+
+```shell
+php -r "file_exists('.env') || copy('.env.example', '.env');"
+
+```
+
+
 ## Launch the server locally
 
 ```
