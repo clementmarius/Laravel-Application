@@ -80,7 +80,6 @@ heroku addons:create heroku-postgresql:mini
 ```
 
 
-
 Extract DATABASE_URL from Heroku Dashboard
 
 (----------completer doc----------------------)
@@ -98,4 +97,11 @@ Push to Heroku
 
 ```shell
 git push heroku main
+```
+
+To run migration, run
+
+```shell
+heroku run bash
+$> php artisan migrate --ansi
 ```
