@@ -70,3 +70,9 @@ Then copy/paste the generated key (replace "..." by the key)
 ```shell
 heroku config:set APP_KEY=...
 ```
+
+Push to Heroku 
+
+```shell
+git push heroku main
+```
