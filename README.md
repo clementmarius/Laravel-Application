@@ -100,7 +100,7 @@ Read DATABASE_URL by typing
 
 ```shell
 heroku config:get DATABASE_URL
-# postgres://<dbusername>:<dbpassword>@<dbhost>:<dbport>/<dbname>
+# postgres://dbusername:dbpassword@dbhost:dbport/dbname
 ```
 
 So now you have dbusername, dbpassword, etc (actual values are complicated, long String)
@@ -108,11 +108,11 @@ So now you have dbusername, dbpassword, etc (actual values are complicated, long
 Set the actual values inside heroku, like this :
 
 ```shell
-heroku config:set DB_USERNAME=<dbusername>
-heroku config:set DB_PASSWORD=<dbpassword>
-heroku config:set DB_HOST=<dbhost>
-heroku config:set DB_PORT=<dbport>
-heroku config:set DB_DATABASE=<dbname>
+heroku config:set DB_USERNAME=dbusername
+heroku config:set DB_PASSWORD=dbpassword
+heroku config:set DB_HOST=dbhost
+heroku config:set DB_PORT=dbport
+heroku config:set DB_DATABASE=dbname
 ```
 
 Push to Heroku 
