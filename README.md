@@ -17,7 +17,9 @@ psql --version
 # 14.11
 ```
 
-[Installation on Linux from scratch](https://saaslit.com/blog/laravel/how-to-install-laravel-11-on-linux)
+If you have Ubuntu-based distribution, you can install php and composer with
+
+ * [Laravel on Linux from scratch](https://saaslit.com/blog/laravel/how-to-install-laravel-11-on-linux)
 
 ## Install a database locally
 
@@ -25,11 +27,6 @@ psql --version
 sudo -u postgres psql
 ```
 
-install psql drivers
-
-```
-sudo apt-get install php-pgsql
-```
 Then
 
 ```sql
