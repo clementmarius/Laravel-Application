@@ -103,7 +103,7 @@ heroku config:get DATABASE_URL
 # postgres://<dbusername>:<dbpassword>@<dbhost>:<dbport>/<dbname>
 ```
 
-So now you have <dbusername>, <dbpassword>, etc (actual values are complicated, long String)
+So now you have dbusername, dbpassword, etc (actual values are complicated, long String)
 
 Set the actual values inside heroku, like this :
 
