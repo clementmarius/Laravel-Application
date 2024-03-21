@@ -17,7 +17,9 @@ psql --version
 # 14.11
 ```
 
-[Installation on Linux from scratch](https://saaslit.com/blog/laravel/how-to-install-laravel-11-on-linux)
+If you have Ubuntu-based distribution, you can install php and composer with
+
+ * [Laravel on Linux from scratch](https://saaslit.com/blog/laravel/how-to-install-laravel-11-on-linux)
 
 ## Install a database locally
 
@@ -25,11 +27,6 @@ psql --version
 sudo -u postgres psql
 ```
 
-install psql drivers
-
-```
-sudo apt-get install php-pgsql
-```
 Then
 
 ```sql
@@ -103,19 +100,19 @@ Read DATABASE_URL by typing
 
 ```shell
 heroku config:get DATABASE_URL
-# postgres://<dbusername>:<dbpassword>@<dbhost>:<dbport>/<dbname>
+# postgres://dbusername:dbpassword@dbhost:dbport/dbname
 ```
 
-So now you have <dbusername>, <dbpassword>, etc (actual values are complicated, long String)
+So now you have dbusername, dbpassword, etc (actual values are complicated, long String)
 
 Set the actual values inside heroku, like this :
 
 ```shell
-heroku config:set DB_USERNAME=<dbusername>
-heroku config:set DB_PASSWORD=<dbpassword>
-heroku config:set DB_HOST=<dbhost>
-heroku config:set DB_PORT=<dbport>
-heroku config:set DB_DATABASE=<dbname>
+heroku config:set DB_USERNAME=dbusername
+heroku config:set DB_PASSWORD=dbpassword
+heroku config:set DB_HOST=dbhost
+heroku config:set DB_PORT=dbport
+heroku config:set DB_DATABASE=dbname
 ```
 
 Push to Heroku 
