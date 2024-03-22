@@ -27,10 +27,10 @@
             </svg>
         </a>
         <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-            We invest in the world’s potential</h1>
-        <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Here at
-            Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive
-            economic growth.</p>
+            Welcome to the demo</h1>
+        <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">A warm
+            welcome! Please <a href="/about" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">read
+                the about page</a> in order to discover how to use it.</p>
         <div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
             <a href="#"
                class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
@@ -113,6 +113,17 @@
                     </svg>
                 </a>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-white dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <div class="max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Some features you can
+                tell to the user</h2>
+            <p class="text-gray-500 sm:text-xl dark:text-gray-400">Here at SaasLitDemo we focus on markets where
+                technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
         </div>
     </div>
 </section>

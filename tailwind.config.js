@@ -40,11 +40,10 @@ module.exports = {
                     900: "#1e3a8a",
                     950: "#172554",
                 },
+
             },
         },
-        plugins: [
-            require('flowbite/plugin')
-        ],
+        plugins: [require('flowbite/plugin')],
     }
 }
 
