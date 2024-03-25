@@ -3,8 +3,7 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build",
-        "heroku-postbuild": "npm run dev"
+        "build": "vite build"
     },
     "devDependencies": {
         "@vitejs/plugin-vue": "^5.0.4",
