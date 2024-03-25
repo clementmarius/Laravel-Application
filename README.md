@@ -51,7 +51,14 @@ php artisan key:generate --ansi
 php artisan migrate --ansi
 ```
 
-Then launch the server locally
+Launch flowbite
+
+```
+npm run dev
+```
+
+
+In an other window launch the server locally
 
 ```
 php artisan serve
