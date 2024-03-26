@@ -112,6 +112,16 @@ heroku config:get DATABASE_URL
 
 So now you have dbusername, dbpassword, etc (actual values are complicated, long String)
 
+You can as well call the function in your terminal and add the DATABASE_URL, it will, you set up those followings information
+
+```shell
+heroku config:set DB_USERNAME=dbusername
+heroku config:set DB_PASSWORD=dbpassword
+heroku config:set DB_HOST=dbhost
+heroku config:set DB_PORT=dbport
+heroku config:set DB_DATABASE=dbname
+```
+
 Set the actual values inside heroku, like this :
 
 ```shell
