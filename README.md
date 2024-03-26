@@ -132,6 +132,11 @@ heroku config:set DB_PORT=dbport
 heroku config:set DB_DATABASE=dbname
 ```
 
+You must update your .env file and add to it the following line, otherwise your assets might not load while you are deploying to Heroku
+```
+ASSET_URL=https://your-app.herokuapp.com
+```
+
 Push to Heroku 
 
 ```shell
