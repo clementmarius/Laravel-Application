@@ -5,17 +5,17 @@
         "dev": "vite",
         "build": "vite build"
     },
-    "devDependencies": {
+    "dependencies": {
         "@vitejs/plugin-vue": "^5.0.4",
-        "autoprefixer": "^10.4.19",
         "axios": "^1.6.4",
         "flowbite": "^2.3.0",
-        "laravel-vite-plugin": "^1.0.2",
+        "laravel-vite-plugin": "^1.0.2"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.19",
+        "flowbite-typography": "^1.0.3",
         "postcss": "^8.4.38",
         "tailwindcss": "^3.4.1",
         "vite": "^5.2.6"
-    },
-    "dependencies": {
-        "alpinejs": "^3.13.7"
     }
 }
