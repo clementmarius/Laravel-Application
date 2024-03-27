@@ -7,7 +7,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/FAQ', function () {
+Route::get('/faq', function () {
     return view('pages/faq');
 });
 
