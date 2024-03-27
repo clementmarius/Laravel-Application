@@ -10,7 +10,7 @@
 </head>
 <body>
 
-@yield('navbar')
+@include('shared/navbar')
 @yield('pages')
 
 </body>
