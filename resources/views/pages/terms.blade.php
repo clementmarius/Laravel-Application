@@ -1,15 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    @vite(['resources/css/app.css','resources/js/app.js'])
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Terms</title>
-</head>
-<body>
-
+@extends('template/template')
+@section('pages')
 <section class="py-8 bg-white lg:py-24 dark:bg-gray-900">
     <div class="max-w-4xl px-4 mx-auto lg:px-4 format dark:format-invert">
         <h1 class="mb-6 text-3xl font-bold text-gray-900 lg:text-4xl dark:text-white">Terms and conditions</h1>
@@ -48,6 +38,4 @@
             That's why you didn't need to click on a block to accept cookie storage!</p>
     </div>
 </section>
-
-</body>
-</html>
+@endsection
