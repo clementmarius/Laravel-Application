@@ -12,6 +12,7 @@
 
 @include('shared/navbar')
 @yield('pages')
+@include('shared/footer')
 
 </body>
 </html>
