@@ -51,7 +51,7 @@ php artisan key:generate --ansi
 php artisan migrate --ansi
 ```
 
-Launch flowbite
+Launch local assets watching & compilation
 
 ```
 npm run dev
