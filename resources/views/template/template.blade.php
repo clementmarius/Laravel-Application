@@ -19,5 +19,7 @@
 
 @include('shared/footer')
 
+<script type="text/javascript" src="{{ asset('/js/darkmode.js') }}"></script>
+
 </body>
 </html>
