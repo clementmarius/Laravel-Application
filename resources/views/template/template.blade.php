@@ -11,7 +11,12 @@
 <body>
 
 @include('shared/navbar')
-@yield('pages')
+
+<div class="my-8 py-8">
+    @yield('pages')
+</div>
+
+
 @include('shared/footer')
 
 </body>
