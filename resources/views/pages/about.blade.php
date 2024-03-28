@@ -1,6 +1,6 @@
 @extends('template/template')
 @section('pages')
-    <section class="py-8 bg-white lg:py-24 dark:bg-gray-900">
+    <section class="py-8 bg-white lg:py-24 dark:bg-gray-900 mt-16">
         <div class="max-w-4xl px-4 mx-auto lg:px-4 format dark:format-invert">
             <h1 class="mb-6 text-3xl font-bold text-gray-900 lg:text-4xl dark:text-white">About</h1>
             <p class="mb-10 text-lg text-gray-600 dark:text-gray-400 lg:text-lg">Welcome to the demo of saaslit. Here are instructions to discover the live application you will get once you bought a license</p>
