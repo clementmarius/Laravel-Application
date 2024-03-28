@@ -49,15 +49,15 @@ $a_class = "block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-
                 <li>
                     <a href="/about"
 
-                       class="<?php echo $_SERVER['REQUEST_URI'] == "/about" ?  $a_active_class :  $a_class ?>"  aria-current="page">About</a>
+                       class="<?php echo $_SERVER['REQUEST_URI'] == "/about" ?  $a_active_class :  $a_class ?>"  <?php echo $_SERVER['REQUEST_URI'] == "/about" ? : 'aria-current="page"'?>>About</a>
                 </li>
                 <li>
                     <a href="/faq"
-                       class="<?php echo $_SERVER['REQUEST_URI'] == "/faq" ?  $a_active_class :  $a_class ?>"  aria-current="page">FAQ</a>
+                       class="<?php echo $_SERVER['REQUEST_URI'] == "/faq" ?  $a_active_class :  $a_class ?>"  <?php echo $_SERVER['REQUEST_URI'] == "/faq" ? : 'aria-current="page"'?>>FAQ</a>
                 </li>
                 <li>
                     <a href="/pricing"
-                       class="<?php echo $_SERVER['REQUEST_URI'] == "/pricing" ?  $a_active_class :  $a_class ?>"  aria-current="page">Pricing</a>
+                       class="<?php echo $_SERVER['REQUEST_URI'] == "/pricing" ?  $a_active_class :  $a_class ?>"  <?php echo $_SERVER['REQUEST_URI'] == "/pricing" ? : 'aria-current="page"'?>>Pricing</a>
                 </li>
 
             </ul>
