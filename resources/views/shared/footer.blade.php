@@ -2,7 +2,7 @@
     <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div class="sm:flex sm:items-center sm:justify-between">
             <a href="/" class="hidden md:flex  items-center text-2xl font-semibold text-gray-900 dark:text-white">
-                <img src="{{URL::asset('/image/logo.png')}}" class="w-8 h-8 mr-2" alt="logo" > SaasLitDemo
+                <img src="{{URL::asset('/images/logo.png')}}" class="w-8 h-8 mr-2" alt="logo" > SaasLitDemo
             </a>
             <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
                 <li>
