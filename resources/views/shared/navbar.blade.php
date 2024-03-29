@@ -56,6 +56,14 @@ $a_class = "block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-
                     <a href="/pricing"
                        class="<?php echo $_SERVER['REQUEST_URI'] == "/pricing" ?  $a_active_class :  $a_class ?>"  <?php echo $_SERVER['REQUEST_URI'] == "/pricing" ? : 'aria-current="page"'?>>Pricing</a>
                 </li>
+                <li>
+                    <a href="/login"
+                       class="<?php echo $a_class ?>">Log in</a>
+                </li>
+                <li>
+                    <a href="/register"
+                       class="<?php echo $a_class ?>">Register</a>
+                </li>
 
             </ul>
         </div>
