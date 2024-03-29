@@ -1,13 +1,13 @@
 @extends('template/template')
 @section('pages')
-<section class="py-8 bg-white lg:py-24 dark:bg-gray-900">
-    <div class="max-w-4xl px-4 mx-auto lg:px-4 format dark:format-invert">
-        <h1 class="mb-6 text-3xl font-bold text-gray-900 lg:text-4xl dark:text-white">Terms and conditions</h1>
-        <p class="mb-10 text-lg text-gray-600 dark:text-gray-400 lg:text-lg">Here are the terms and conditions for
+<section class="py-8 bg-white lg:py-24">
+    <div class="max-w-4xl px-4 mx-auto lg:px-4 format">
+        <h1 class="mb-6 text-3xl font-bold text-gray-900 lg:text-4xl">Terms and conditions</h1>
+        <p class="mb-10 text-lg text-gray-600 lg:text-lg">Here are the terms and conditions for
             SaasLitDemo. If you have a question please<a
-                class="mx-1 font-normal text-blue-600 no-underline dark:text-blue-400 hover:underline"
+                class="mx-1 font-normal text-blue-600 no-underline hover:underline"
                 href="/about#contact">contact us</a>and we will help you out as soon as we can.</p>
-        <hr class="my-12 border-gray-200 dark:border-gray-800">
+        <hr class="my-12 border-gray-200">
         .
         <h2 class="mb-4">Terms of use</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero qui harum labore nisi minus tempora est ipsum

@@ -12,7 +12,7 @@
 
 @include('shared/navbar')
 
-<div class="mt-8 py-8 bg-white dark:bg-gray-900">
+<div class="mt-8 py-8 bg-white">
     @yield('pages')
 </div>
 
