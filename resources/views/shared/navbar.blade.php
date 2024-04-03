@@ -39,25 +39,24 @@ $a_class = "block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-
             </button>
         </div>
         <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700" >
-
+            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
 
 
                 <li>
                     <a href="/about"
 
-                       class="<?php echo $_SERVER['REQUEST_URI'] == "/about" ?  $a_active_class :  $a_class ?>"  <?php echo $_SERVER['REQUEST_URI'] == "/about" ? : 'aria-current="page"'?>>About</a>
+                       class="<?php echo $_SERVER['REQUEST_URI'] == "/about" ?  $a_active_class :  $a_class ?>" <?php echo $_SERVER['REQUEST_URI'] == "/about" ?: 'aria-current="page"' ?>>About</a>
                 </li>
                 <li>
                     <a href="/faq"
-                       class="<?php echo $_SERVER['REQUEST_URI'] == "/faq" ?  $a_active_class :  $a_class ?>"  <?php echo $_SERVER['REQUEST_URI'] == "/faq" ? : 'aria-current="page"'?>>FAQ</a>
+                       class="<?php echo $_SERVER['REQUEST_URI'] == "/faq" ?  $a_active_class :  $a_class ?>" <?php echo $_SERVER['REQUEST_URI'] == "/faq" ?: 'aria-current="page"' ?>>FAQ</a>
                 </li>
                 <li>
                     <a href="/pricing"
-                       class="<?php echo $_SERVER['REQUEST_URI'] == "/pricing" ?  $a_active_class :  $a_class ?>"  <?php echo $_SERVER['REQUEST_URI'] == "/pricing" ? : 'aria-current="page"'?>>Pricing</a>
+                       class="<?php echo $_SERVER['REQUEST_URI'] == "/pricing" ?  $a_active_class :  $a_class ?>" <?php echo $_SERVER['REQUEST_URI'] == "/pricing" ?: 'aria-current="page"' ?>>Pricing</a>
                 </li>
                 <li>
-                    <a href="/login"
+                    <a href="/sign_in"
                        class="<?php echo $a_class ?>">Log in</a>
                 </li>
                 <li>
@@ -65,6 +64,13 @@ $a_class = "block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-
                        class="<?php echo $a_class ?>">Register</a>
                 </li>
 
+                <li>
+                    <a href="{{ route('logout') }}" class="<?php echo $a_class ?>"
+                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </li>
             </ul>
         </div>
     </div>
