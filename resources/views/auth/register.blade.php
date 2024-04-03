@@ -1,7 +1,7 @@
 <section class="bg-gray-50 dark:bg-gray-900">
     <div class=" flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-        <div class="max-w-screen-xl px-4 py-8 mx-auto lg:grid lg:gap-20 lg:py-16 lg:grid-cols-2">
-            <div class="flex-col justify-between hidden mr-auto lg:flex lg:col-span-5 xl:col-span-1 xl:mb-0">
+        <div class="max-w-screen-xl px-4 py-8 mx-auto lg:grid lg:gap-20 lg:py-16 lg:grid-cols-12">
+            <div class="flex-col justify-between hidden mr-auto lg:flex lg:col-span-5 xl:col-span-6 xl:mb-0">
                 <div class="flex pt-8">
                     <a href="/" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
                     </a>
