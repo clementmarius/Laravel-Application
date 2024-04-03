@@ -20,9 +20,10 @@
                 @include('components/logo')
             </div>
 
-            <div class="w-full sm:max-w-md mt-6 px-8 pb-5 pt-7 bg-white dark:bg-gray-800 dark:border-gray-700 shadow dark:border overflow-hidden sm:rounded-lg ">
-                {{ $slot }}
-            </div>
+
+
+            {{ $slot }}
+
         </div>
         <script>
             // On page load or when changing themes, best to add inline in `head` to avoid FOUC

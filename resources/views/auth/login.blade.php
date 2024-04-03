@@ -1,7 +1,13 @@
+
 <section class="bg-gray-50 dark:bg-gray-900">
+
     <x-guest-layout>
         <!-- Session Status -->
+        <div class="w-full sm:max-w-md mt-6 px-8 pb-5 pt-7 bg-white dark:bg-gray-800 dark:border-gray-700 shadow dark:border overflow-hidden sm:rounded-lg ">
+
+
         <x-auth-session-status class="mb-4 " :status="session('status')" />
+
             <h1 class=" text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Sign in to your account
             </h1>
@@ -50,6 +56,7 @@
                 Don’t have an account yet? <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
             </p>
         </form>
+        </div>
     </x-guest-layout>
 
 </section>
