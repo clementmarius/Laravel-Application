@@ -93,7 +93,12 @@
                         </h1>
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
-                            {{----}}
+
+                            <div>
+                                <x-input-label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" :value="__('Name')" />
+                                <x-text-input id="name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                                <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                            </div>
                             <!-- Email Address -->
                             <div class="mt-4">
                                 <x-input-label for="email" :value="__('Email')"
@@ -118,7 +123,6 @@
 
                                 <x-input-error :messages="$errors->get('password')" class="mt-2"/>
                             </div>
-
 
                             {{--<!-- Remember Me -->--}}
                             <div class="block mt-4 flex justify-between">
