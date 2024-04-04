@@ -13,24 +13,38 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+    <body class="bg-gray-50 dark:bg-gray-900">
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
+            @include('dashboard.navigation')
+
+            <div class="flex pt-16 overflow-hidden bg-gray-50 dark:bg-gray-900">
+                @include('components/sidebar-dashboard')
+                <div class="fixed inset-0 z-10 hidden bg-gray-900/50 dark:bg-gray-900/90" id="sidebarBackdrop"></div>
+                <div id="main-content" class="relative w-full h-full overflow-y-auto bg-gray-50 lg:ml-64 dark:bg-gray-900">
+                    <main>
+{{--                        <div id="flash" class="relative z-50">--}}
+{{--                            <%= render "shared/flash" %>--}}
+{{--                        </div>--}}
+                        {{$slot}}
+                    </main>
+                </div>
+            </div>
+
+
+
+
+        <script>
+            // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark')
+            }
+        </script>
+        <script type="text/javascript" src="{{ asset('/js/darkmode.js') }}"></script>
+
     </body>
 </html>
