@@ -13,6 +13,7 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     </head>
     <body class="bg-gray-50 dark:bg-gray-900">
 
@@ -31,5 +32,7 @@
                 document.documentElement.classList.remove('dark')
             }
         </script>
+        <script type="text/javascript" src="{{ asset('/js/darkmode.js') }}"></script>
+
     </body>
 </html>
