@@ -75,11 +75,4 @@ $a_class = "block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-
         </div>
     </div>
 </nav>
-<script>
-    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-    } else {
-        document.documentElement.classList.remove('dark')
-    }
-</script>
+
