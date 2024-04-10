@@ -43,6 +43,12 @@
                         <span class="text-base text-gray-900 dark:text-white">This action cannot be undone. Please be certain.</span>
                     </div>
 
+                    <form action="{{ route('profile.destroy', $user) }}" method="post">
+{{--                        @csrf--}}
+{{--                        @method("delete")--}}
+                        <button class="btn btn-danger">Supprimer</button>
+                    </form>
+
                 </div>
             </div>
         </div>
