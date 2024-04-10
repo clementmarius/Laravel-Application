@@ -21,6 +21,13 @@ class ProfileController extends Controller
         ]);
     }
 
+    public function editEmail(Request $request): View
+    {
+        return view('profile/emailUpdateForm', [
+            'user' => $request->user(),
+        ]);
+    }
+
     /**
      * Update the user's profile information.
      */
