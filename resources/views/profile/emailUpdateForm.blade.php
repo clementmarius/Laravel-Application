@@ -48,10 +48,14 @@
                                 <x-input-error class="mt-2" :messages="$errors->get('name')" />
                             </div>
 
+
+
                             <div class="col-span-6 sm:col-span-3">
                                 <x-input-label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="email" :value="__('Email')" />
                                 <x-text-input id="email" name="email" type="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" :value="old('email', $user->email)" required autocomplete="username" />
                                 <x-input-error class="mt-2" :messages="$errors->get('email')" />
+
+
 
                                 @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
                                     <div>
@@ -71,6 +75,12 @@
                                     </div>
                                 @endif
                             </div>
+
+{{--                            <div class="col-span-6 sm:col-span-3">--}}
+{{--                                <x-input-label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="password" :value="__('Password')" />--}}
+{{--                                <x-text-input  id="password" name="password" type="password" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required autofocus autocomplete="password"/>--}}
+{{--                                <x-input-error class="mt-2" :messages="$errors->get('password')" />--}}
+{{--                            </div>--}}
 
                             <div class="col-span-6 sm:col-full">
                                 <x-primary-button>{{ __('Save changes') }}</x-primary-button>
