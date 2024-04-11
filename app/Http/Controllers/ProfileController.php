@@ -28,6 +28,20 @@ class ProfileController extends Controller
         ]);
     }
 
+
+    public function showSession(Request $request): View
+    {
+//        dd(auth()->user()->session()->orderBy('created_at', 'desc')->get());
+
+
+        return view('profile/showUserSessions', [
+
+            'user' => $request->user(),
+
+            'session' => $request->session()->only(['user_agent'])
+        ]);
+    }
+
     public function edit(Request $request): View
     {
         return view('profile.edit', [

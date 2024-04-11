@@ -37,6 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard/account/email/edit', [ProfileController::class, 'editEmail'])->name('profile.editEmail');
     Route::get('/dashboard/account/password/edit', [ProfileController::class, 'editPassword'])->name('profile.editPassword');
     Route::get('/dashboard/account/profile', [ProfileController::class, 'showProfile'])->name('profile.showProfile');
+    Route::get('/dashboard/account/sessions', [ProfileController::class, 'showSession'])->name('profile.showSession');
 
 });
 
