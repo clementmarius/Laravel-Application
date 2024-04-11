@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Session;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -23,6 +24,8 @@ class ProfileController extends Controller
     public function showProfile(Request $request): View
     {
 
+//        dd(User::query());
+        dd(User::all());
         return view('profile/showProfile', [
             'user' => $request->user(),
         ]);
@@ -31,7 +34,13 @@ class ProfileController extends Controller
 
     public function showSession(Request $request): View
     {
+
+        dd(Session::all());
+
 //        dd(auth()->user()->session()->orderBy('created_at', 'desc')->get());
+
+//        dd(Session::query());
+
 
 
         return view('profile/showUserSessions', [
