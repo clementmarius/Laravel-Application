@@ -23,9 +23,6 @@ class ProfileController extends Controller
 
     public function showProfile(Request $request): View
     {
-
-//        dd(User::query());
-        dd(User::all());
         return view('profile/showProfile', [
             'user' => $request->user(),
         ]);
@@ -35,19 +32,14 @@ class ProfileController extends Controller
     public function showSession(Request $request): View
     {
 
-        dd(Session::all());
-
-//        dd(auth()->user()->session()->orderBy('created_at', 'desc')->get());
-
-//        dd(Session::query());
-
+//        dd(Session::all());
 
 
         return view('profile/showUserSessions', [
 
             'user' => $request->user(),
 
-            'session' => $request->session()->only(['user_agent'])
+            'sessions' => Session::all()
         ]);
     }
 
