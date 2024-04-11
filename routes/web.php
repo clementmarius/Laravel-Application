@@ -25,6 +25,7 @@ Route::get('/terms', function () {
 });
 
 Route::get('/dashboard', function () {
+
     return view('dashboard/dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -33,10 +34,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-
-
-
     Route::get('/dashboard/account/email/edit', [ProfileController::class, 'editEmail'])->name('profile.editEmail');
+    Route::get('/dashboard/account/password/edit', [ProfileController::class, 'editPassword'])->name('profile.editPassword');
     Route::get('/dashboard/account/profile', [ProfileController::class, 'showProfile'])->name('profile.showProfile');
 
 });
