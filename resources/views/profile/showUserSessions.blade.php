@@ -46,9 +46,9 @@
                                         </thead>
                                         <tbody>
                                         @foreach($sessions as $session)
-                                            <tr class="border-b dark:border-gray-700">
-                                                <td class="px-4 py-3">User Agent : <?php echo $session->user_id ?></td>
-                                                <td class="px-4 py-3">User Ip :</td>
+                                            <br class="border-b dark:border-gray-700">
+                                                <td class="px-4 py-3">User Agent : <?php echo $session->user_agent ?></td>
+                                                <td class="px-4 py-3">User Ip :<?php echo $session->ip_address ?></td>
                                             </tr>
                                         @endforeach
 
