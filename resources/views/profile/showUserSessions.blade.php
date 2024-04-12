@@ -1,4 +1,4 @@
-<x-app-layout xmlns="http://www.w3.org/1999/html">
+<x-app-layout>
 
     <div class="grid grid-cols-1 px-4 pt-6 xl:gap-4 dark:bg-gray-900">
         <div class="mb-4 col-span-full xl:mb-2">
@@ -6,12 +6,11 @@
             <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Connected sessions</h1>
         </div>
         <div class="col-span-2">
-            <div
-                class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
+            <div class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
                 <div class="flow-root">
                     <h3 class="text-xl font-semibold dark:text-white">Sessions</h3>
                     <ul class="divide-y divide-gray-200 dark:divide-gray-700">
-                        <li class="pt-4 pb-6">
+                        <li class="pt-4 pb-6 flex gap-10">
                             <div class="flex items-center space-x-4">
                                 <div class="flex-shrink-0">
 
@@ -30,21 +29,17 @@
                                         </svg>
                                     @endif
                                 </div>
-                                <div class="flex-1 min-w-0">
+                                <div class="flex-1 min-w-0 ">
                                     <p class="text-base font-semibold text-gray-900 truncate dark:text-white">
                                         <strong>User Agent:</strong>
                                         {{ $session['user_agent'] }}
                                     </p>
                                     <p class="text-sm font-normal text-gray-500 truncate dark:text-gray-400">
-                                        Created at {{ $session['created_at'] }}
-                                        {{ $session['ip_address'] }}
+                                        Created at {{ $session['created_at'] }} / IP : {{ $session['ip_address'] }}
                                     </p>
                                 </div>
-                                <p class="text-sm font-normal text-gray-500 truncate dark:text-gray-400">
-                                </p>
                             </div>
                             <div class="inline-flex items-center">
-
                                 <a href="{{route('session.destroy')}}">
                                     <button
                                         class="px-3 py-2 mb-3 mr-3 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-primary-300 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
@@ -82,7 +77,5 @@
                 </div>
             </div>
         </div>
-    </div>
-
     </div>
 </x-app-layout>
