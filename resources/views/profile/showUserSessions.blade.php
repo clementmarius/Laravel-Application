@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout xmlns="http://www.w3.org/1999/html">
 
     <div class="grid grid-cols-1 px-4 pt-6 xl:gap-4 dark:bg-gray-900">
         <div class="mb-4 col-span-full xl:mb-2">
@@ -41,22 +41,23 @@
                                     </p>
                                 </div>
                                 <p class="text-sm font-normal text-gray-500 truncate dark:text-gray-400">
-                                    {{--                                    Created at <%= session.created_at %> / IP : <%= session.ip_address %>--}}
                                 </p>
                             </div>
                             <div class="inline-flex items-center">
-                                {{--                                <%= button_to "Revoke", dashboard_account_session_path(session.id), method: :delete, class: "px-3 py-2 mb-3 mr-3 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-primary-300 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" %>--}}
+
+                                <a href="{{route('session.destroy')}}"><button class="px-3 py-2 mb-3 mr-3 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-primary-300 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                                                                    Revoke</button></a>
                             </div>
                 </div>
                 </li>
-                {{--                    <% end %>--}}
-
                 </ul>
                 <div>
                     <turbo-frame id="view_more">
-                        {{--                        <%= button_to "View all", dashboard_account_list_all_sessions_path, class: "text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" %>--}}
+                                                <?php button_to "View all", dashboard_account_list_all_sessions_path, class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" ?>
                     </turbo-frame>
 
+
+                    
 
                     <turbo-frame id="view_more">
                         <p class="text-base text-gray-900 dark:text-white underline decoration-blue-500">

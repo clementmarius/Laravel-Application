@@ -34,8 +34,8 @@ class ProfileController extends Controller
         $agent = new Agent();
 
 
-            // Get the IP address and user agent from the request
-            $ipAddress = $request->ip();
+        // Get the IP address and user agent from the request
+        $ipAddress = $request->ip();
         $userAgent = $request->userAgent();
 
         // Add data to the session
@@ -54,6 +54,7 @@ class ProfileController extends Controller
             'isDesktop' => $agent->isDesktop(),
         ]);
     }
+
 
 
 
