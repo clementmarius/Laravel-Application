@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\View\View;
+use Jenssegers\Agent\Agent;
 
 class ProfileController extends Controller
 {
@@ -28,20 +29,52 @@ class ProfileController extends Controller
         ]);
     }
 
-
     public function showSession(Request $request): View
     {
+        $agent = new Agent();
 
-//        dd(Session::all());
 
+            // Get the IP address and user agent from the request
+            $ipAddress = $request->ip();
+        $userAgent = $request->userAgent();
+
+        // Add data to the session
+        session()->put('created_at', now());
+        session()->put('ip_address', $ipAddress);
+        session()->put('user_agent', $userAgent);
+
+        // Get all session data
+        $sessionData = session()->all();
+
+//        dd($sessionData); // You can uncomment this line to see all session data
 
         return view('profile/showUserSessions', [
-
             'user' => $request->user(),
-
-            'sessions' => Session::all()
+            'session' => $sessionData,
+            'isDesktop' => $agent->isDesktop(),
         ]);
     }
+
+
+
+//Fonction qui appelle le modele
+
+//    public function showSession(Request $request): View
+//    {
+//
+////        dd(Session::all());
+//
+////        Session::push('created_at', now());
+//
+//        return view('profile/showUserSessions', [
+//
+//            'user' => $request->user(),
+//
+//            'sessions' => Session::all(),
+//        ]);
+//    }
+//
+
 
     public function edit(Request $request): View
     {
