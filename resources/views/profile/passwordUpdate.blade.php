@@ -19,18 +19,18 @@
                     <h3 class="mb-4 text-xl font-semibold dark:text-white">Password information</h3>
                     {{--                    <%= form_with(url: dashboard_account_password_path, method: :patch) do |form| %>--}}
                     {{--                    <% if @user.errors.any? %>--}}
-                    <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
-                        <h2>
-                            {{--                            <%= pluralize(@user.errors.count, "error") %> --}}
-                            prohibited this user from being saved:</h2>
-                        <ul>
-                            {{--                            <% @user.errors.each do |error| %>--}}
-                            <li class="font-medium">
-                                {{--                                <%= error.full_message %>--}}
-                            </li>
-                            {{--                            <% end %>--}}
-                        </ul>
-                    </div>
+{{--                    <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">--}}
+{{--                        <h2>--}}
+{{--                            --}}{{--                            <%= pluralize(@user.errors.count, "error") %> --}}
+{{--                            prohibited this user from being saved:</h2>--}}
+{{--                        <ul>--}}
+{{--                            --}}{{--                            <% @user.errors.each do |error| %>--}}
+{{--                            <li class="font-medium">--}}
+{{--                                --}}{{--                                <%= error.full_message %>--}}
+{{--                            </li>--}}
+{{--                            --}}{{--                            <% end %>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
                     {{--                    <% end %>--}}
 
                     <div class="grid grid-cols-6 gap-6">
