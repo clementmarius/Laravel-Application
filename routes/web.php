@@ -25,13 +25,23 @@ Route::get('/terms', function () {
 });
 
 Route::get('/dashboard', function () {
+
     return view('dashboard/dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/dashboard/account/email/edit', [ProfileController::class, 'editEmail'])->name('profile.editEmail');
+    Route::patch('/dashboard/account/email/edit', [ProfileController::class, 'update'])->name('profile.update');
+
+    Route::get('/dashboard/account/password/edit', [ProfileController::class, 'editPassword'])->name('profile.editPassword');
+    Route::get('/dashboard/account/profile', [ProfileController::class, 'showProfile'])->name('profile.showProfile');
+    Route::get('/dashboard/account/sessions', [ProfileController::class, 'showSession'])->name('profile.showSession');
 });
+
+
+
 
 require __DIR__.'/auth.php';

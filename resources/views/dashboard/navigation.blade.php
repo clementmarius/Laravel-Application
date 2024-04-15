@@ -56,7 +56,7 @@
                     <div class="z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600 hidden" id="dropdown-2" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(1884px, 61px);" data-popper-placement="bottom">
                         <div class="px-4 py-3" role="none">
                             <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
-                                email utilisateur
+                                <?php echo auth()->user()->email ?>
                             </p>
                         </div>
                         <ul class="py-1" role="none">
@@ -67,7 +67,7 @@
                                 <a href="/dashboard/account" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Account</a>
                             </li>
                             <li>
-                                <a href="{{ route('logout') }}" class="flex items-center p-2 text-base text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
+                                <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
