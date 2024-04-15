@@ -2,11 +2,10 @@
 
     <div class="grid grid-cols-1 px-4 pt-6 xl:gap-4 dark:bg-gray-900">
         <div class="mb-4 col-span-full xl:mb-2">
-        <header>
+{{--            <%= render "shared/dashboard_breadcrumb" %>--}}
             <h2 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">
                 {{ __('Edit email') }}
             </h2>
-        </header>
         </div>
 
 
@@ -16,6 +15,7 @@
 {{--                    //if current user verified--}}
                     <h2 class="text-lg font-bold dark:text-white">Change your email</h2>
 {{--                    <% else %>--}}
+{{--                    <h2 class="text-lg font-bold dark:text-white">Verify your email</h2>--}}
                     <p class="mt-2 text-base text-gray-900 dark:text-white">
                         <span class="mt-2 text-base text-gray-900 dark:text-white">We sent a verification email to the address below. Check that email and follow those instructions to confirm it's your email address.</span>
                     </p>
@@ -32,11 +32,11 @@
 {{--                <% if Current.user.verified? %>--}}
 {{--                <%= form_with(url: dashboard_account_email_path, method: :patch) do |form| %>--}}
 
-                <div class="grid grid-cols-6 gap-6">
+
                     <form id="send-verification" method="post" action="{{ route('verification.send') }}">
                         @csrf
                     </form>
-
+                    <div class="grid grid-cols-6 gap-6">
                     <div class="col-span-6 sm:col-span-3">
                         <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
                             @csrf
@@ -48,7 +48,9 @@
                                 <x-input-error class="mt-2" :messages="$errors->get('name')" />
                             </div>
 
-
+{{--                            <div class="col-span-6 sm:col-span-3">--}}
+{{--                                &nbsp;--}}
+{{--                            </div>--}}
 
                             <div class="col-span-6 sm:col-span-3">
                                 <x-input-label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="email" :value="__('Email')" />
@@ -100,6 +102,8 @@
 
                 </div>
 
+{{--                <% end %>--}}
+{{--                <% end %>--}}
             </div>
         </div>
     </div>

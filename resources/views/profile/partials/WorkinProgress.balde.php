@@ -1,46 +1,46 @@
 <div class="grid grid-cols-1 px-4 pt-6 xl:gap-4 dark:bg-gray-900">
     <div class="mb-4 col-span-full xl:mb-2">
         <%= render "shared/dashboard_breadcrumb" %>
-        <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Connected sessions</h1>
+        <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Edit email</h1>
     </div>
     <div class="col-span-2">
         <div class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
-            <div class="flow-root">
-                <h3 class="text-xl font-semibold dark:text-white">Sessions</h3>
-                <ul class="divide-y divide-gray-200 dark:divide-gray-700">
-                    <% @sessions.each do |session| %>
-                    <li class="pt-4 pb-6">
-                        <div class="flex items-center space-x-4">
-                            <div class="flex-shrink-0">
-                                <% if device(session.user_agent) == "desktop" %>
-                                <svg class="w-6 h-6 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                                <% else %>
-                                <svg class="w-6 h-6 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                                <% end %>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <p class="text-base font-semibold text-gray-900 truncate dark:text-white">
-                                    <strong>User Agent:</strong>
-                                    <%= session.user_agent %>
-                                </p>
-                                <p class="text-sm font-normal text-gray-500 truncate dark:text-gray-400">
-                                    Created at <%= session.created_at %> / IP : <%= session.ip_address %>
-                                </p>
-                            </div>
-                            <div class="inline-flex items-center">
-                                <%= button_to "Revoke", dashboard_account_session_path(session.id), method: :delete, class: "px-3 py-2 mb-3 mr-3 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-primary-300 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" %>
-                            </div>
-                        </div>
-                    </li>
-                    <% end %>
-
-                </ul>
-                <div>
-                    <turbo-frame id="view_more">
-                        <%= button_to "View all", dashboard_account_list_all_sessions_path, class: "text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" %>
-                    </turbo-frame>
+            <div class="mb-4">
+                <% if Current.user.verified? %>
+                <h2 class="text-lg font-bold dark:text-white">Change your email</h2>
+                <% else %>
+                <h2 class="text-lg font-bold dark:text-white">Verify your email</h2>
+                <p class="mt-2 text-base text-gray-900 dark:text-white">
+                    <span class="mt-2 text-base text-gray-900 dark:text-white">We sent a verification email to the address below. Check that email and follow those instructions to confirm it's your email address.</span>
+                </p>
+                <p class="my-4">
+                    <span class="mt-2 text-base text-gray-900 dark:text-white"><%= Current.user.email %></span>
+                    <span class="mt-2 text-base text-gray-900 dark:text-white"><%= Current.user.email %></span>
+                </p>
+                <p class="mt-2"><%= button_to "Re-send verification email", identity_email_verification_path, class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" %></p>
+                <% end %>
+            </div>
+            <% if Current.user.verified? %>
+            <%= form_with(url: dashboard_account_email_path, method: :patch) do |form| %>
+            <div class="grid grid-cols-6 gap-6">
+                <div class="col-span-6 sm:col-span-3">
+                    <%= form.label :email, "New email", class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+                    <%= form.email_field :email, required: true, autofocus: true, class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" %>
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    &nbsp;
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <%= form.label :password_challenge, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+                    <%= form.password_field :password_challenge, required: true, autocomplete: "current-password", class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" %>
+                </div>
+                <div class="col-span-6 sm:col-full">
+                    <%= form.submit "Save changes", class: "cursor-pointer text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" %>
                 </div>
             </div>
+            <% end %>
+            <% end %>
+
         </div>
     </div>
 
