@@ -117,6 +117,7 @@ $a_button_class =
                             </li>
                         </ul>
                     </li>
+                    @can('delete users')
                     <li>
 
                         <button
@@ -171,6 +172,7 @@ $a_button_class =
                         </ul>
 
                     </li>
+                    @endcan
                 </ul>
                 <div class="pt-2 space-y-2">
                     <a
