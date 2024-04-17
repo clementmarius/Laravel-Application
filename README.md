@@ -51,6 +51,11 @@ php artisan key:generate --ansi
 php artisan migrate --ansi
 ```
 
+Run npm install to install all the dependencies
+```
+npm install
+```
+
 Launch local assets watching & compilation
 
 ```
