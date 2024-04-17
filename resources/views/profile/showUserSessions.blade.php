@@ -2,7 +2,7 @@
 
     <div class="grid grid-cols-1 px-4 pt-6 xl:gap-4 dark:bg-gray-900">
         <div class="mb-4 col-span-full xl:mb-2">
-            {{--        <%= render "shared/dashboard_breadcrumb" %>--}}
+            @include('shared.breadcrumb')
             <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Connected sessions</h1>
         </div>
         <div class="col-span-2">

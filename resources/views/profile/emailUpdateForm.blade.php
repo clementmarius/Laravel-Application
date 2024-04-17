@@ -2,7 +2,8 @@
 
     <div class="grid grid-cols-1 px-4 pt-6 xl:gap-4 dark:bg-gray-900">
         <div class="mb-4 col-span-full xl:mb-2">
-            {{--            <%= render "shared/dashboard_breadcrumb" %>--}}
+            @include('shared.breadcrumb')
+
             <h2 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">
                 {{ __('Edit email') }}
             </h2>
@@ -81,19 +82,19 @@
                                 <x-input-error class="mt-2" :messages="$errors->get('name')"/>
                             </div>
 
-{{--                            <div class="col-span-6 sm:col-span-3">--}}
-{{--                                <x-input-label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"--}}
-{{--                                               for="password" :value="__('Password')"/>--}}
-{{--                                <x-text-input id="password" name="password" type="password"--}}
-{{--                                              class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"--}}
-{{--                                />--}}
-{{--                            </div>--}}
+                            {{--                            <div class="col-span-6 sm:col-span-3">--}}
+                            {{--                                <x-input-label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"--}}
+                            {{--                                               for="password" :value="__('Password')"/>--}}
+                            {{--                                <x-text-input id="password" name="password" type="password"--}}
+                            {{--                                              class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"--}}
+                            {{--                                />--}}
+                            {{--                            </div>--}}
 
-{{--                            <div>--}}
-{{--                                <x-input-label for="update_password_current_password" :value="__('Current Password')" />--}}
-{{--                                <x-text-input id="update_password_current_password" name="current_password" type="password" class="mt-1 block w-full" autocomplete="current-password" />--}}
-{{--                                <x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2" />--}}
-{{--                            </div>--}}
+                            {{--                            <div>--}}
+                            {{--                                <x-input-label for="update_password_current_password" :value="__('Current Password')" />--}}
+                            {{--                                <x-text-input id="update_password_current_password" name="current_password" type="password" class="mt-1 block w-full" autocomplete="current-password" />--}}
+                            {{--                                <x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2" />--}}
+                            {{--                            </div>--}}
 
 
                             <div class="col-span-6 sm:col-full">
