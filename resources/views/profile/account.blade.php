@@ -32,28 +32,28 @@
                                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                             <path clip-rule="evenodd" fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"></path>
                                         </svg>
-                                        <span class="leading-tight">Profile and status can be viewed on <%= link_to "profile page", dashboard_account_profile_path, class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %></span>
+                                        <span class="leading-tight">Profile and status can be viewed on <a href="/dashboard/account/profile" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">profile page</a> </span>
                                     </li>
                                     <li class="flex space-x-2">
                                         <!-- Icon -->
                                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                             <path clip-rule="evenodd" fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"></path>
                                         </svg>
-                                        <span class="leading-tight">Email can be edited on the <%= link_to "email edition page", edit_dashboard_account_email_path, class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %></span>
+                                        <span class="leading-tight">Email can be edited on the <a href="/dashboard/account/email/edit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">"email edition page</a></span>
                                     </li>
                                     <li class="flex space-x-2">
                                         <!-- Icon -->
                                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                             <path clip-rule="evenodd" fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"></path>
                                         </svg>
-                                        <span class="leading-tight">Password can be edited on the <%= link_to "password edition page", edit_dashboard_account_password_path, class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %></span>
+                                        <span class="leading-tight">Password can be edited on the <a href="/dashboard/account/password/edit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">password edition page</a></span>
                                     </li>
                                     <li class="flex space-x-2">
                                         <!-- Icon -->
                                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                             <path clip-rule="evenodd" fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"></path>
                                         </svg>
-                                        <span class="leading-tight">Connected sessions can be listed on the <%= link_to "sessions page", dashboard_account_sessions_path, class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %></span>
+                                        <span class="leading-tight">Connected sessions can be listed on the <a href="/dashboard/account/sessions" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">sessions page</a></span>
                                     </li>
                                 </ul>
                                 <a href="/dashboard/account/profile" class="inline-flex items-center p-2 font-medium rounded-lg text-primary-700 hover:bg-gray-100 dark:text-primary-500 dark:hover:bg-gray-700">
