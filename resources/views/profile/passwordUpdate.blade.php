@@ -3,6 +3,8 @@
     <div class="grid grid-cols-1 px-4 pt-6 xl:gap-4 dark:bg-gray-900">
         <header>
             <div class="mb-4 col-span-full xl:mb-2">
+                @include('shared.breadcrumb')
+
                 <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">
                     {{ __('Edit Password') }}
                 </h1>
@@ -19,18 +21,18 @@
                     <h3 class="mb-4 text-xl font-semibold dark:text-white">Password information</h3>
                     {{--                    <%= form_with(url: dashboard_account_password_path, method: :patch) do |form| %>--}}
                     {{--                    <% if @user.errors.any? %>--}}
-{{--                    <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">--}}
-{{--                        <h2>--}}
-{{--                            --}}{{--                            <%= pluralize(@user.errors.count, "error") %> --}}
-{{--                            prohibited this user from being saved:</h2>--}}
-{{--                        <ul>--}}
-{{--                            --}}{{--                            <% @user.errors.each do |error| %>--}}
-{{--                            <li class="font-medium">--}}
-{{--                                --}}{{--                                <%= error.full_message %>--}}
-{{--                            </li>--}}
-{{--                            --}}{{--                            <% end %>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
+                    {{--                    <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">--}}
+                    {{--                        <h2>--}}
+                    {{--                            --}}{{--                            <%= pluralize(@user.errors.count, "error") %> --}}
+                    {{--                            prohibited this user from being saved:</h2>--}}
+                    {{--                        <ul>--}}
+                    {{--                            --}}{{--                            <% @user.errors.each do |error| %>--}}
+                    {{--                            <li class="font-medium">--}}
+                    {{--                                --}}{{--                                <%= error.full_message %>--}}
+                    {{--                            </li>--}}
+                    {{--                            --}}{{--                            <% end %>--}}
+                    {{--                        </ul>--}}
+                    {{--                    </div>--}}
                     {{--                    <% end %>--}}
 
                     <div class="grid grid-cols-6 gap-6">
@@ -84,6 +86,6 @@
 
     </div>
 
-{{--    </div>--}}
+    {{--    </div>--}}
 
 </x-app-layout>
