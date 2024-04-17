@@ -29,6 +29,7 @@ class ProfileController extends Controller
         ]);
     }
 
+
     public function showSession(Request $request): View
     {
         $agent = new Agent();
