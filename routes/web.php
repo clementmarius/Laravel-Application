@@ -33,6 +33,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    Route::get('/dashboard/account', function () {return view('profile/account');});
+
     Route::get('/dashboard/account/email/edit', [ProfileController::class, 'editEmail'])->name('profile.editEmail');
     Route::patch('/dashboard/account/email/edit', [ProfileController::class, 'update'])->name('profile.update');
 
