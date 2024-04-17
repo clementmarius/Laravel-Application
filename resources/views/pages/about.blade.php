@@ -1,4 +1,7 @@
 @extends('template/template')
+@section('title')
+    About
+@endsection
 @section('pages')
     <section class="py-8 bg-white lg:py-24 dark:bg-gray-900 mt-16">
         <div class="max-w-4xl px-4 mx-auto lg:px-4 format dark:format-invert">
