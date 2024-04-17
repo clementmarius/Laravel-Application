@@ -18,6 +18,9 @@
                 <li>
                     <a href="/terms" class="hover:underline me-4 md:me-6">Terms and conditions</a>
                 </li>
+                <li>
+                    <a href="/blog" class="hover:underline me-4 md:me-6">Blog</a>
+                </li>
             </ul>
         </div>
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
