@@ -56,6 +56,11 @@ Run npm install to install all the dependencies
 npm install
 ```
 
+Then seed the database, this will create the default roles and default user( mail adress = 'admin@user.com' , password = 'Secret1*3*5*' ) 
+```
+php artisan db:seed
+```
+
 Launch local assets watching & compilation
 
 ```

@@ -21,54 +21,59 @@ $a_class = "block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-
                         fill-rule="evenodd" clip-rule="evenodd"></path>
                 </svg>
             </button>
+            @auth()
+                <div class="flex items-center ml-3">
 
-            <div class="flex items-center ml-3">
-                <div>
-                    <button type="button"
-                            class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-                            id="user-menu-button-2" aria-expanded="false" data-dropdown-toggle="dropdown-2">
-                        <span class="sr-only">Open user menu</span>
-                        <div class="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
-                            <svg class="absolute w-10 h-10 text-gray-400 -left-1" fill="currentColor"
-                                 viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                                      clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
-                    </button>
-                </div>
-                <div
-                    class="z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600 hidden"
-                    id="dropdown-2"
-                    style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(1884px, 61px);"
-                    data-popper-placement="bottom">
-                    <div class="px-4 py-3" role="none">
-                        <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
-                            <?php echo auth()->user()->email ?>
-                        </p>
+                    <div>
+                        <button type="button"
+                                class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                                id="user-menu-button-2" aria-expanded="false" data-dropdown-toggle="dropdown-2">
+                            <span class="sr-only">Open user menu</span>
+                            <div class="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                                <svg class="absolute w-10 h-10 text-gray-400 -left-1" fill="currentColor"
+                                     viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                                          clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                        </button>
                     </div>
-                    <ul class="py-1" role="none">
-                        <li>
-                            <a href="/dashboard"
-                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                               role="menuitem">Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="/dashboard/account"
-                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                               role="menuitem">Account</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('logout') }}"
-                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </li>
-                    </ul>
+
+                    <div
+                        class="z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600 hidden"
+                        id="dropdown-2"
+                        style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(1884px, 61px);"
+                        data-popper-placement="bottom">
+                        <div class="px-4 py-3" role="none">
+                            <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
+                                    <?php echo auth()->user()->email ?>
+                            </p>
+                        </div>
+                        <ul class="py-1" role="none">
+                            <li>
+                                <a href="/dashboard"
+                                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                   role="menuitem">Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="/dashboard/account"
+                                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                   role="menuitem">Account</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                      style="display: none;">
+                                    @csrf
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
+            @endauth
+
             <a href="/pricing">
                 <button type="button"
                         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
