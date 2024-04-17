@@ -64,12 +64,18 @@ $a_class = "block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-
                         <a href="/sign_in"
                            class="<?php echo $a_class ?>">Log in</a>
                     </li>
-                
+
                     <li>
                         <a href="/register"
                            class="<?php echo $a_class ?>">Sign up</a>
                     </li>
                 @endguest
+                @auth()
+                <li>
+                    <a href="/dashboard"
+                       class="<?php echo $a_class ?>">My Account</a>
+                </li>
+                @endauth
             </ul>
         </div>
     </div>
