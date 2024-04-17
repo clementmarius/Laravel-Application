@@ -29,7 +29,7 @@
                                         </svg>
                                         <span class="leading-tight">All users can access the <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="/dashboard/account">account page</a></span>
                                     </li>
-                                    @can('delete users')
+{{--                                    @can('delete users')--}}
                                     <li class="flex space-x-2">
                                         <!-- Icon -->
                                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -37,7 +37,7 @@
                                         </svg>
                                         <span class="leading-tight">Admin may manage data. See <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="/dashboard/crud">CRUD page</a></span>
                                     </li>
-                                    @endcan
+{{--                                    @endcan--}}
                                 </ul>
                                 <a href="/dashboard/crud" class="inline-flex items-center p-2 font-medium rounded-lg text-primary-700 hover:bg-gray-100 dark:text-primary-500 dark:hover:bg-gray-700">
                                     Let's start
