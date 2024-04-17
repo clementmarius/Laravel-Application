@@ -14,8 +14,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
 
         $user = User::factory()->create([
             'name' => 'admin',
@@ -28,5 +26,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $user->assignRole('admin');
+
     }
 }
