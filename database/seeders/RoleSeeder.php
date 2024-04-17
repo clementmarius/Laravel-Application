@@ -15,7 +15,7 @@ class RoleSeeder extends Seeder
         $adminRole = Role::create(['name' => 'admin','guard_name' => 'web']);
         $userRole = Role::create(['name' => 'customer','guard_name' => 'web']);
 
-        $user = User::find(1);
-        $user->assignRole('admin');
+//        $user = User::find(1);
+//        $user->assignRole('admin');
     }
 }
