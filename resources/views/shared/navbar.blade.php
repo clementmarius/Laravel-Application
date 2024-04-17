@@ -63,14 +63,7 @@ $a_class = "block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-
                     <a href="/register"
                        class="<?php echo $a_class ?>">Register</a>
                 </li>
-
-                <li>
-                    <a href="{{ route('logout') }}" class="<?php echo $a_class ?>"
-                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                </li>
+                
             </ul>
         </div>
     </div>
