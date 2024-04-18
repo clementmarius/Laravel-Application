@@ -19,7 +19,7 @@ $a_button_class =
 <aside id="default-sidebar" class="fixed top-0 left-0 z-20 flex flex-col flex-shrink-0 w-64 h-full pt-16 font-normal duration-75 lg:flex transition-width" aria-label="Sidenav">
 {{--    fixed top-0 left-0 z-20 flex flex-col flex-shrink-0 hidden w-64 h-full pt-16 font-normal duration-75 lg:flex transition-width--}}
 {{--    fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0--}}
-    <div class="flex flex-col flex-1 pt-5 pb-4 overflow-y-auto">
+    <div class="flex flex-col flex-1 pb-4 overflow-y-auto">
             <div
                 class="
           flex-1 px-3 space-y-1 bg-white divide-y divide-gray-200 dark:bg-gray-800
