@@ -31,6 +31,10 @@ Route::get('/terms', function () {
 //    return view('pages/terms');
 //})->middleware(isAdmin::class);
 
+
+//Route CRUD
+Route::get('dashboard/crud', function () {return view('dashboard/crud/showCrud');})->middleware(isAdmin::class);
+
 Route::get('/dashboard', function () {
 
     return view('dashboard/dashboard');
