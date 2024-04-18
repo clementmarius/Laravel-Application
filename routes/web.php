@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Middleware\IsAdmin;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -23,6 +24,12 @@ Route::get('/pricing', function () {
 Route::get('/terms', function () {
     return view('pages/terms');
 });
+
+//exemple d'utilisation middleware
+
+//Route::get('/terms', function () {
+//    return view('pages/terms');
+//})->middleware(isAdmin::class);
 
 Route::get('/dashboard', function () {
 
