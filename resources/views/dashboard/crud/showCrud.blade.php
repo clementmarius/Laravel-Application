@@ -41,7 +41,7 @@
                                             <path clip-rule="evenodd" fill-rule="evenodd"
                                                   d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"></path>
                                         </svg>
-                                        <span class="leading-tight">Blog articles can be listed on the <a href=""
+                                        <span class="leading-tight">Blog articles can be listed on the <a href="/dashboard/crud/articles"
                                                                                                           class="font-medium text-blue-600 dark:text-blue-500 hover:underline">articles page</a> </span>
                                     </li>
                                     <li class="flex space-x-2">
