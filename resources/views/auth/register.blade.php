@@ -1,3 +1,8 @@
+<?php
+//$errors = '';
+
+?>
+
 <section>
     <div class=" flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <div class="max-w-screen-xl px-4 py-8 mx-auto lg:grid lg:gap-20 lg:py-16 lg:grid-cols-12">
@@ -121,7 +126,9 @@
                                               required autocomplete="new-password"
                                               placeholder="At least 12 characters"/>
 
-                                <x-input-error :messages="$errors->get('password')" class="mt-2"/>
+                                @if($errors->has('password'))
+                                <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium ">⚠ Error - </span>password is not strong enough: at least a lowercase letter, a uppercase, a digit, a special char and 12+ chars</p>
+                                @endif
                             </div>
 
                             {{--<!-- Remember Me -->--}}
