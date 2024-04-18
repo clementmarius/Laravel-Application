@@ -7,16 +7,16 @@
         </div>
         <div class="items-center justify-between block sm:flex md:divide-x md:divide-gray-100 dark:divide-gray-700">
             <div class="flex items-center mb-4 sm:mb-0">
-                <%= search_form_for @q, url: dashboard_crud_users_path, html: {class: 'sm:pr-3', "data-controller": "filters", "data-turbo-frame": "table"} do |f| %>
+{{--                <%= search_form_for @q, url: dashboard_crud_users_path, html: {class: 'sm:pr-3', "data-controller": "filters", "data-turbo-frame": "table"} do |f| %>--}}
                 <div>
-                    <%= f.label :email_cont, class: "sr-only" %>
+{{--                    <%= f.label :email_cont, class: "sr-only" %>--}}
                     <div class="relative w-48 mt-1 sm:w-64 xl:w-96">
-                        <%= f.search_field :email_cont, "data-action": "filters#submit", placeholder: "Search for users", class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" %>
+{{--                        <%= f.search_field :email_cont, "data-action": "filters#submit", placeholder: "Search for users", class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" %>--}}
                     </div>
                 </div>
-                <% end %>
+{{--                <% end %>--}}
             </div>
-            <%= link_to "Add new user", new_dashboard_crud_user_path, id:"createUserButton", class: "text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800" %>
+{{--            <%= link_to "Add new user", new_dashboard_crud_user_path, id:"createUserButton", class: "text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800" %>--}}
         </div>
     </div>
 </div>
@@ -24,24 +24,24 @@
     <div class="overflow-x-auto">
         <div class="inline-block min-w-full align-middle">
             <div class="overflow-hidden shadow">
-                <%= turbo_frame_tag "table" do %>
+{{--                <%= turbo_frame_tag "table" do %>--}}
                 <table class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-600">
                     <thead class="bg-gray-100 dark:bg-gray-700">
                     <tr>
                         <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
-                            <%= sort_link(@q, :id) %>
+{{--                            <%= sort_link(@q, :id) %>--}}
                         </th>
                         <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
-                            <%= sort_link(@q, :email) %>
+{{--                            <%= sort_link(@q, :email) %>--}}
                         </th>
                         <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
-                            <%= sort_link(@q, :role) %>
+{{--                            <%= sort_link(@q, :role) %>--}}
                         </th>
                         <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
-                            <%= sort_link(@q, :verified) %>
+{{--                            <%= sort_link(@q, :verified) %>--}}
                         </th>
                         <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
-                            <%= sort_link(@q, :created_at) %>
+{{--                            <%= sort_link(@q, :created_at) %>--}}
                         </th>
                         <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
                             Actions
@@ -49,91 +49,96 @@
                     </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
-                    <% @users.each do |user| %>
-                    <%= tag.tr id: dom_id(user), class: "hover:bg-gray-100 dark:hover:bg-gray-700" do %>
-                    <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= link_to "##{user.id}", dashboard_crud_user_path(user.id), class:"font-medium text-blue-600 dark:text-blue-500 hover:underline", data: {turbo: false} %></td>
-                    <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= user.email %></td>
-                    <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= user.role %></td>
-                    <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= user.verified %></td>
-                    <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= user.created_at.strftime("%b %d, %Y") %></td>
+{{--                    <% @users.each do |user| %>--}}
+{{--                    <%= tag.tr id: dom_id(user), class: "hover:bg-gray-100 dark:hover:bg-gray-700" do %>--}}
+                    <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
+{{--                        <%= link_to "##{user.id}", dashboard_crud_user_path(user.id), class:"font-medium text-blue-600 dark:text-blue-500 hover:underline", data: {turbo: false} %></td>--}}
+                    <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
+{{--                        <%= user.email %></td>--}}
+                    <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
+{{--                        <%= user.role %></td>--}}
+                    <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
+{{--                        <%= user.verified %></td>--}}
+                    <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
+{{--                        <%= user.created_at.strftime("%b %d, %Y") %></td>--}}
                     <td class="p-4 space-x-2 whitespace-nowrap">
-                        <%= link_to edit_dashboard_crud_user_path(user), data: {turbo: false}, class: "inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" do %>
-                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path>
-                            <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"></path>
-                        </svg>
-                        Update
-                        <% end %>
-                        <button data-controller="deleter" data-deleter-prover-outlet=".js-prover" data-deleter-actualid="<%= user.id %>" data-action="mouseover->deleter#changeDeletionId focus->deleter#changeDeletionId" type="button" id="deleteUserButton" data-drawer-target="drawer-delete-user-default" data-drawer-show="drawer-delete-user-default" aria-controls="drawer-delete-user-default" data-drawer-placement="right" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900">
-                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path>
-                            </svg>
-                            Delete item
-                            <template data-deleter-target="tplt">
-                                <%= button_to "Yes, Delete User ##{user.id}", dashboard_crud_user_path("#{user.id}"), method: :delete, data: {turbo: false}, form_class: "js-deletion-form", class: "text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-3 py-2.5 text-center mr-2 dark:focus:ring-red-900" %>
-                            </template>
-                        </button>
+{{--                        <%= link_to edit_dashboard_crud_user_path(user), data: {turbo: false}, class: "inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" do %>--}}
+{{--                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">--}}
+{{--                            <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path>--}}
+{{--                            <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"></path>--}}
+{{--                        </svg>--}}
+{{--                        Update--}}
+{{--                        <% end %>--}}
+{{--                        <button data-controller="deleter" data-deleter-prover-outlet=".js-prover" data-deleter-actualid="<%= user.id %>" data-action="mouseover->deleter#changeDeletionId focus->deleter#changeDeletionId" type="button" id="deleteUserButton" data-drawer-target="drawer-delete-user-default" data-drawer-show="drawer-delete-user-default" aria-controls="drawer-delete-user-default" data-drawer-placement="right" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900">--}}
+{{--                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">--}}
+{{--                                <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path>--}}
+{{--                            </svg>--}}
+{{--                            Delete item--}}
+{{--                            <template data-deleter-target="tplt">--}}
+{{--                                <%= button_to "Yes, Delete User ##{user.id}", dashboard_crud_user_path("#{user.id}"), method: :delete, data: {turbo: false}, form_class: "js-deletion-form", class: "text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-3 py-2.5 text-center mr-2 dark:focus:ring-red-900" %>--}}
+{{--                            </template>--}}
+{{--                        </button>--}}
                     </td>
-                    <% end %>
-                    <% end %>
+{{--                    <% end %>--}}
+{{--                    <% end %>--}}
                     </tbody>
                 </table>
-                <% end %>
+{{--                <% end %>--}}
             </div>
         </div>
     </div>
 </div>
 <div class="sticky bottom-0 right-0 items-center w-full p-4 bg-white border-t border-gray-200 sm:flex sm:justify-between dark:bg-gray-800 dark:border-gray-700">
     <div class="flex items-center mb-4 sm:mb-0">
-        <% if @pagy.prev.present? %>
-        <%= button_to dashboard_crud_users_path,
-        params: { page: @pagy.prev },
-        method: :get,
-        class: "inline-flex justify-center p-1 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white",
-        "data-turbo-stream": true do %>
+{{--        <% if @pagy.prev.present? %>--}}
+{{--        <%= button_to dashboard_crud_users_path,--}}
+{{--        params: { page: @pagy.prev },--}}
+{{--        method: :get,--}}
+{{--        class: "inline-flex justify-center p-1 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white",--}}
+{{--        "data-turbo-stream": true do %>--}}
         <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
         </svg>
-        <% end %>
-        <% end %>
-        <% if @pagy.next.present? %>
-        <%= button_to dashboard_crud_users_path,
-        params: { page: @pagy.next },
-        method: :get,
-        class: "inline-flex justify-center p-1 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white",
-        "data-turbo-stream": true do %>
+{{--        <% end %>--}}
+{{--        <% end %>--}}
+{{--        <% if @pagy.next.present? %>--}}
+{{--        <%= button_to dashboard_crud_users_path,--}}
+{{--        params: { page: @pagy.next },--}}
+{{--        method: :get,--}}
+{{--        class: "inline-flex justify-center p-1 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white",--}}
+{{--        "data-turbo-stream": true do %>--}}
         <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
         </svg>
-        <% end %>
-        <% end %>
-        <%= raw pagy_info(@pagy)  %>
+{{--        <% end %>--}}
+{{--        <% end %>--}}
+{{--        <%= raw pagy_info(@pagy)  %>--}}
     </div>
     <div class="flex items-center space-x-3">
-        <% if @pagy.prev.present? %>
-        <%= button_to dashboard_crud_users_path,
-        params: { page: @pagy.prev },
-        method: :get,
-        class: "inline-flex items-center justify-center flex-1 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800",
-        "data-turbo-stream": true do %>
+{{--        <% if @pagy.prev.present? %>--}}
+{{--        <%= button_to dashboard_crud_users_path,--}}
+{{--        params: { page: @pagy.prev },--}}
+{{--        method: :get,--}}
+{{--        class: "inline-flex items-center justify-center flex-1 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800",--}}
+{{--        "data-turbo-stream": true do %>--}}
         <svg class="w-5 h-5 mr-1 -ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
         </svg>
         Previous
-        <% end %>
-        <% end %>
-        <% if @pagy.next.present? %>
-        <%= button_to dashboard_crud_users_path,
-        params: { page: @pagy.next },
-        method: :get,
-        class: "inline-flex items-center justify-center flex-1 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800",
-        "data-turbo-stream": true do %>
+{{--        <% end %>--}}
+{{--        <% end %>--}}
+{{--        <% if @pagy.next.present? %>--}}
+{{--        <%= button_to dashboard_crud_users_path,--}}
+{{--        params: { page: @pagy.next },--}}
+{{--        method: :get,--}}
+{{--        class: "inline-flex items-center justify-center flex-1 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800",--}}
+{{--        "data-turbo-stream": true do %>--}}
         Next
         <svg class="w-5 h-5 ml-1 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
         </svg>
-        <% end %>
-        <% end %>
+{{--        <% end %>--}}
+{{--        <% end %>--}}
     </div>
 </div>
 <!-- Delete User Drawer -->

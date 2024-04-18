@@ -58,9 +58,9 @@
                         <div class="flex align-center text-base font-semibold text-gray-900 dark:text-white">
                             <a href="/blog/<%= article.slug %>" target="_blank" data-turbo="false">
 {{--                                <%= article.title %>--}}
-                                <svg class="inline w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.8a1.2 1.2 0 0 1-1.2 1.2H5.2A1.2 1.2 0 0 1 4 18.8V7.2A1.2 1.2 0 0 1 5.2 6h4.6m4.4-2H20v5.8m-7.9 2L20 4.2"/>
-                                </svg>
+{{--                                <svg class="inline w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">--}}
+{{--                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.8a1.2 1.2 0 0 1-1.2 1.2H5.2A1.2 1.2 0 0 1 4 18.8V7.2A1.2 1.2 0 0 1 5.2 6h4.6m4.4-2H20v5.8m-7.9 2L20 4.2"/>--}}
+{{--                                </svg>--}}
                             </a>
                         </div>
                         <div class="text-sm font-normal text-gray-500 dark:text-gray-400">
