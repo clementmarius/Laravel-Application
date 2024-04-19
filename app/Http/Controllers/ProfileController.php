@@ -29,6 +29,13 @@ class ProfileController extends Controller
         ]);
     }
 
+    public function showUsers(Request $request): View
+    {
+        return view('profile/showProfile', [
+            'users' => $request->user(),
+        ]);
+    }
+
 
     public function showSession(Request $request): View
     {

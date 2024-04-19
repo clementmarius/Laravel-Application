@@ -24,24 +24,24 @@
     <div class="overflow-x-auto">
         <div class="inline-block min-w-full align-middle">
             <div class="overflow-hidden shadow">
-                <%= turbo_frame_tag "table" do %>
+{{--                <%= turbo_frame_tag "table" do %>--}}
                 <table class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-600">
                     <thead class="bg-gray-100 dark:bg-gray-700">
                     <tr>
                         <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
-                            <%= sort_link(@q, :id) %>
+{{--                            <%= sort_link(@q, :id) %>--}}
                         </th>
                         <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
-                            <%= sort_link(@q, :email) %>
+{{--                            <%= sort_link(@q, :email) %>--}}
                         </th>
                         <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
-                            <%= sort_link(@q, :role) %>
+{{--                            <%= sort_link(@q, :role) %>--}}
                         </th>
                         <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
-                            <%= sort_link(@q, :verified) %>
+{{--                            <%= sort_link(@q, :verified) %>--}}
                         </th>
                         <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
-                            <%= sort_link(@q, :created_at) %>
+{{--                            <%= sort_link(@q, :created_at) %>--}}
                         </th>
                         <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
                             Actions
@@ -49,12 +49,13 @@
                     </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+                    @foreach($users as $user)
 {{--                    <% @users.each do |user| %>--}}
 {{--                    <%= tag.tr id: dom_id(user), class: "hover:bg-gray-100 dark:hover:bg-gray-700" do %>--}}
                     <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
 {{--                        <%= link_to "##{user.id}", dashboard_crud_user_path(user.id), class:"font-medium text-blue-600 dark:text-blue-500 hover:underline", data: {turbo: false} %></td>--}}
                     <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
-{{--                        <%= user.email %></td>--}}
+                        <?php echo $user->email ?></td>
                     <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
 {{--                        <%= user.role %></td>--}}
                     <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -69,6 +70,7 @@
 {{--                        </svg>--}}
 {{--                        Update--}}
 {{--                        <% end %>--}}
+
 {{--                        <button data-controller="deleter" data-deleter-prover-outlet=".js-prover" data-deleter-actualid="<%= user.id %>" data-action="mouseover->deleter#changeDeletionId focus->deleter#changeDeletionId" type="button" id="deleteUserButton" data-drawer-target="drawer-delete-user-default" data-drawer-show="drawer-delete-user-default" aria-controls="drawer-delete-user-default" data-drawer-placement="right" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900">--}}
 {{--                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">--}}
 {{--                                <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path>--}}
@@ -79,6 +81,7 @@
 {{--                            </template>--}}
 {{--                        </button>--}}
                     </td>
+                    @endforeach
 {{--                    <% end %>--}}
 {{--                    <% end %>--}}
                     </tbody>
