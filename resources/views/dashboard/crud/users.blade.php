@@ -24,24 +24,24 @@
     <div class="overflow-x-auto">
         <div class="inline-block min-w-full align-middle">
             <div class="overflow-hidden shadow">
-{{--                <%= turbo_frame_tag "table" do %>--}}
+                <%= turbo_frame_tag "table" do %>
                 <table class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-600">
                     <thead class="bg-gray-100 dark:bg-gray-700">
                     <tr>
                         <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
-{{--                            <%= sort_link(@q, :id) %>--}}
+                            <%= sort_link(@q, :id) %>
                         </th>
                         <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
-{{--                            <%= sort_link(@q, :email) %>--}}
+                            <%= sort_link(@q, :email) %>
                         </th>
                         <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
-{{--                            <%= sort_link(@q, :role) %>--}}
+                            <%= sort_link(@q, :role) %>
                         </th>
                         <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
-{{--                            <%= sort_link(@q, :verified) %>--}}
+                            <%= sort_link(@q, :verified) %>
                         </th>
                         <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
-{{--                            <%= sort_link(@q, :created_at) %>--}}
+                            <%= sort_link(@q, :created_at) %>
                         </th>
                         <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
                             Actions
