@@ -35,7 +35,14 @@ Route::get('/terms', function () {
 //Route CRUD
 Route::get('dashboard/crud', function () {return view('dashboard/crud/showCrud');})->middleware(isAdmin::class);
 Route::get('dashboard/crud/articles', function () {return view('dashboard/crud/articles');})->middleware(isAdmin::class);
-Route::get('dashboard/crud/users', function () {return view('dashboard/crud/users');})->middleware(isAdmin::class);
+
+//CRUD affichage users :
+Route::get('dashboard/crud/users', [\App\Http\Controllers\UserCrudController::class, 'showUsers'])->middleware(isAdmin::class);
+
+
+//Piste delete btn
+//Route::get('dashboard/account/profile', [ProfileController::class, 'destroy'])->middleware(isAdmin::class);
+
 
 Route::get('/dashboard', function () {
 
