@@ -40,6 +40,9 @@ Route::get('dashboard/crud/articles', function () {return view('dashboard/crud/a
 Route::get('dashboard/crud/users', [\App\Http\Controllers\UserCrudController::class, 'showUsers'])->middleware(isAdmin::class);
 Route::get('dashboard/crud/users/{id}', [\App\Http\Controllers\UserCrudController::class, 'showUsersById'])->middleware(isAdmin::class);
 
+//CRUD Edit Users
+Route::get('dashboard/crud/users/{id}/edit/', [\App\Http\Controllers\UserCrudController::class, 'editUsers'])->middleware(isAdmin::class);
+
 
 //Piste delete btn
 //Route::get('dashboard/account/profile', [ProfileController::class, 'destroy'])->middleware(isAdmin::class);

@@ -29,4 +29,11 @@ class UserCrudController extends Controller
             'user' => User::findOrFail($id),
         ]);
     }
+
+    public function editUsers(Request $request, $id) : View
+    {
+        return view('dashboard/crud/editUsers', [
+            'user' => User::findOrFail($id),
+        ]);
+    }
 }
