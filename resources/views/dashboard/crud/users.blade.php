@@ -65,10 +65,11 @@
                             {{--                    <%= tag.tr id: dom_id(user), class: "hover:bg-gray-100 dark:hover:bg-gray-700" do %>--}}
                             <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
                                 <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{--                        <%= link_to "##{user.id}", dashboard_crud_user_path(user.id), class:"font-medium text-blue-600 dark:text-blue-500 hover:underline", data: {turbo: false} %></td>--}}
+                                    {{--                        <%= link_to "##{user.id}", dashboard_crud_user_path(user.id) data: {turbo: false} %></td>--}}
 
+                                    <a href="users/{{$user->id}}">
                                     <span
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">#<?php echo $user->id ?></span>
+                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">#<?php echo $user->id ?></span></a>
                                 </td>
 
                                 <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">

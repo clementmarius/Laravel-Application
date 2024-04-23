@@ -38,6 +38,7 @@ Route::get('dashboard/crud/articles', function () {return view('dashboard/crud/a
 
 //CRUD affichage users :
 Route::get('dashboard/crud/users', [\App\Http\Controllers\UserCrudController::class, 'showUsers'])->middleware(isAdmin::class);
+Route::get('dashboard/crud/users/{id}', [\App\Http\Controllers\UserCrudController::class, 'showUsersById'])->middleware(isAdmin::class);
 
 
 //Piste delete btn
