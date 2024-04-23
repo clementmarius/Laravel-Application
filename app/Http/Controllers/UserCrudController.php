@@ -6,6 +6,8 @@ use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use phpDocumentor\Reflection\Types\Integer;
+use PhpParser\Node\Expr\BinaryOp\Identical;
 
 class UserCrudController extends Controller
 {
@@ -17,6 +19,14 @@ class UserCrudController extends Controller
             'users' => User::all(),
 //            'roles' => Role::all(),
 //            'users' => User::find(1)->role;
+        ]);
+    }
+
+    public function showUsersById(Request $request, $id): View
+    {
+
+        return view('dashboard/crud/showUser', [
+            'user' => User::findOrFail($id),
         ]);
     }
 }
