@@ -8,28 +8,34 @@
         @include('dashboard.crud.userComponent')
 
         <div class="flex align-center md:flex-row flex-col">
-            <%= link_to "Edit this user", edit_dashboard_crud_user_path(@user), class: "max-w-fit inline-block
+{{--            <%= link_to "Edit this user", edit_dashboard_crud_user_path(@user)--}}
+{{--            , class: "max-w-fit inline-block--}}
+{{--            cursor-pointer text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300--}}
+{{--            font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700--}}
+{{--            dark:focus:ring-primary-800 mb-1" %>--}}
+
+            <a href="{{$user->id}}/edit"  class="max-w-fit inline-block
             cursor-pointer text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300
             font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700
-            dark:focus:ring-primary-800 mb-1" %>
+            dark:focus:ring-primary-800 mb-1">{{ __('Edit this user') }}</a>
 
-            
+
             <%= link_to "Back to users", dashboard_crud_users_path, class: "max-w-fit inline-block cursor-pointer
             text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg
             text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800
             mb-1 md:ml-1" %>
 
-            <%= button_to dashboard_crud_user_path(@user), method: :delete, class: "flex items-center px-3 py-2.5
-            text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4
-            focus:ring-red-300 dark:focus:ring-red-900", form: { data: { turbo_confirm: 'Are you sure?' }, class:
-            "inline-block md:ml-4" } do %>
-            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd"
-                      d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                      clip-rule="evenodd"></path>
-            </svg>
-            Destroy this user
-            <% end %>
+{{--            <%= button_to dashboard_crud_user_path(@user), method: :delete, class: "flex items-center px-3 py-2.5--}}
+{{--            text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4--}}
+{{--            focus:ring-red-300 dark:focus:ring-red-900", form: { data: { turbo_confirm: 'Are you sure?' }, class:--}}
+{{--            "inline-block md:ml-4" } do %>--}}
+{{--            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">--}}
+{{--                <path fill-rule="evenodd"--}}
+{{--                      d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"--}}
+{{--                      clip-rule="evenodd"></path>--}}
+{{--            </svg>--}}
+{{--            Destroy this user--}}
+{{--            <% end %>--}}
         </div>
 
     </div>
