@@ -25,7 +25,6 @@ class UserCrudController extends Controller
     public function showUsersById(Request $request, $id): View
     {
 
-//        dd(User::findOrFail($id));
         return view('dashboard/crud/showUser', [
             'user' => User::findOrFail($id),
         ]);
