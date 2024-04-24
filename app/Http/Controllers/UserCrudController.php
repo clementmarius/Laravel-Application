@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProfileUpdateRequest;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use phpDocumentor\Reflection\Types\Integer;
 use PhpParser\Node\Expr\BinaryOp\Identical;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class UserCrudController extends Controller
 {
@@ -34,6 +37,22 @@ class UserCrudController extends Controller
     {
         return view('dashboard/crud/editUsers', [
             'user' => User::findOrFail($id),
+            'roles' => Role::all(),
         ]);
+    }
+
+    public function editUsersPost(ProfileUpdateRequest $request, $id): RedirectResponse
+    {
+        $user = User::findOrFail($id);
+
+        $user->fill($request->validated());
+
+        if ($user->isDirty('email')) {
+            $user->email_verified_at = null;
+        }
+
+        $user->save();
+
+        return Redirect::route('dashboard.crud.users')->with('status', 'profile-updated');
     }
 }

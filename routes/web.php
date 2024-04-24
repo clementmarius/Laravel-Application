@@ -42,6 +42,7 @@ Route::get('dashboard/crud/users/{id}', [\App\Http\Controllers\UserCrudControlle
 
 //CRUD Edit Users
 Route::get('dashboard/crud/users/{id}/edit/', [\App\Http\Controllers\UserCrudController::class, 'editUsers'])->middleware(isAdmin::class);
+Route::post('dashboard/crud/users/{id}/edit/', [\App\Http\Controllers\UserCrudController::class, 'editUsersPost'])->middleware(isAdmin::class)->name('user.update');
 
 
 //Piste delete btn
