@@ -42,7 +42,19 @@ Route::get('dashboard/crud/users/{id}', [\App\Http\Controllers\UserCrudControlle
 
 //CRUD Edit Users
 Route::get('dashboard/crud/users/{id}/edit/', [\App\Http\Controllers\UserCrudController::class, 'editUsers'])->middleware(isAdmin::class);
-Route::post('dashboard/crud/users/{id}/edit/', [\App\Http\Controllers\UserCrudController::class, 'editUsersPost'])->middleware(isAdmin::class)->name('user.update');
+
+
+//Route::put('dashboard/crud/users/{id}/edit/', [\App\Http\Controllers\UserCrudController::class, 'editUsersPost'])->middleware(isAdmin::class)->name('user.update');
+
+
+Route::group(['middleware' => ['auth', 'isAdmin']], function() {
+    Route::put('dashboard/crud/users/{id}/edit', [App\Http\Controllers\UserCrudController::class, 'editUsersPost'])->name('user.update');
+});
+
+
+
+//Route::put('dashboard/crud/users/{id}/edit/',function() {dd("Hello from routes");})->middleware(isAdmin::class)->name('user.update');
+
 
 
 //Piste delete btn
@@ -56,7 +68,13 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+//    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    //Test CRUD DELETE
+//    Route::group(['middleware' => ['auth']], function() {
+//        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+//    });
+
 
     Route::get('/dashboard/account', function () {return view('profile/account');});
 

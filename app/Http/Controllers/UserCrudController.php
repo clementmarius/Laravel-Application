@@ -43,6 +43,7 @@ class UserCrudController extends Controller
 
     public function editUsersPost(ProfileUpdateRequest $request, $id): RedirectResponse
     {
+        dd('123');
         $user = User::findOrFail($id);
 
         $user->fill($request->validated());

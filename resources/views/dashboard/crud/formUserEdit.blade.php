@@ -1,10 +1,10 @@
-{{--@dd($user->hasRole('customer'))--}}
 <div class="col-span-2">
     <div
         class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
-        <form action="{{ route('user.update', ['id' => $user->id]) }}" method="post">
-            {{--    @method('PUT')--}}
+{{--        @dd($user->id)--}}
+        <form action="{{ route('user.update', ['id' => $user->id] )}}" method="post">
             @csrf
+            @method('PUT')
             <div class="grid grid-cols-6 gap-6">
                 <div class="col-span-6 sm:col-span-3">
                     <x-input-label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -32,19 +32,19 @@
                     <x-input-label for="role" :value="__('Role')"
                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"/>
 
+
                     <select name="role" id="role"
                             class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+
                         @foreach ($roles as $role)
                             <option
-                                value="{{ $role->name }}"
-                                {{ old('role', $user->roles->first()->name ?? '') == $role ? 'selected' : '' }}>
+                                    value="{{ $role->name }}"
+                                    {{ ($user->hasRole($role->name) || old('role', $user->roles->first()->name ?? '') == $role->name) ? 'selected' : '' }}>
                                 {{ $role->name }}
                             </option>
                         @endforeach
+
                     </select>
-
-                    {{--                <x-input-error :messages="$errors->updatePassword->get('role')" class="mt-2"/>--}}
-
                 </div>
             </div>
 
