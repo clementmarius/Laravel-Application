@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+
 class IsAdmin
 {
     /**
@@ -26,7 +27,7 @@ class IsAdmin
             return $next($request);
         }
 
-        return redirect('/');
+        return redirect('/contact');
     }
 }
 
