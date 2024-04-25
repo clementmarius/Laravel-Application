@@ -25,7 +25,7 @@
             {{--            "inline-block md:ml-4" } do %>--}}
 
 
-            <form action="{{ route('user.destroy', $user) }}" method="post" class="inline-flex">
+            <form action="{{ route('user.destroy', $user) }}" method="post" class="inline-flex" onsubmit="Are you sure?">
                 @csrf
                 @method("delete")
                 <button class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900">
@@ -37,17 +37,6 @@
                     </svg>
                     Delete item
                 </button>
-{{--                <button data-controller="deleter" data-deleter-prover-outlet=".js-prover"--}}
-{{--                        data-deleter-actualid="<%= user.id %>"--}}
-{{--                        data-action="mouseover->deleter#changeDeletionId focus->deleter#changeDeletionId"--}}
-{{--                        type="button" id="deleteUserButton"--}}
-{{--                        data-drawer-target="drawer-delete-user-default"--}}
-{{--                        data-drawer-show="drawer-delete-user-default"--}}
-{{--                        aria-controls="drawer-delete-user-default" data-drawer-placement="right"--}}
-{{--                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900">--}}
-
-{{--                    Delete item--}}
-{{--                </button>--}}
             </form>
         </div>
 
