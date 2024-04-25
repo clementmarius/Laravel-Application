@@ -128,6 +128,7 @@
                                             </svg>
                                             Delete item
                                             <template data-deleter-target="tplt">
+                                                <button class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-3 py-2.5 text-center mr-2 dark:focus:ring-red-900" method="delete", form_class="js-deletion-form" >Yes, Delete User {{$user->id}}</button>
                                                 <%= button_to "Yes, Delete User ##{user.id}", dashboard_crud_user_path("#{user.id}"), method: :delete, data: {turbo: false}, form_class: "js-deletion-form", class: "text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-3 py-2.5 text-center mr-2 dark:focus:ring-red-900" %>
                                             </template>
                                         </button>
@@ -135,11 +136,8 @@
                                 </td>
                             </tr>
                         @endforeach
-                        {{--                    <% end %>--}}
-                        {{--                    <% end %>--}}
                         </tbody>
                     </table>
-                    {{--                <% end %>--}}
                 </div>
             </div>
         </div>
