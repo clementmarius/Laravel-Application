@@ -49,10 +49,11 @@ class User extends Authenticatable
 
     protected function getDefaultGuardName(): string { return 'web'; }
 
-    public function Role(): HasOne
-    {
-        return $this->hasOne(Role::class);
-    }
+//    public function Role(): HasOne
+//    {
+//        return $this->hasOne(Role::class);
+//    }
+
 
 }
 
