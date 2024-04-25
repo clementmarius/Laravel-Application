@@ -40,6 +40,12 @@ Route::get('/contact', function () {
 Route::get('dashboard/crud', function () {return view('dashboard/crud/showCrud');})->middleware(isAdmin::class);
 Route::get('dashboard/crud/articles', function () {return view('dashboard/crud/articles');})->middleware(isAdmin::class);
 
+
+
+Route::resource('user', \App\Http\Controllers\UserCrudController::class);
+
+
+
 //CRUD affichage users :
 Route::get('dashboard/crud/users', [\App\Http\Controllers\UserCrudController::class, 'showUsers'])->middleware(isAdmin::class);
 Route::get('dashboard/crud/users/{id}', [\App\Http\Controllers\UserCrudController::class, 'showUsersById'])->middleware(isAdmin::class);
@@ -92,6 +98,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard/account/profile', [ProfileController::class, 'showProfile'])->name('profile.showProfile');
     Route::get('/dashboard/account/sessions', [ProfileController::class, 'showSession'])->name('profile.showSession');
 });
+
 
 
 

@@ -56,4 +56,12 @@ class UserCrudController extends Controller
 
         return Redirect::route('dashboard.crud.users')->with('status', 'profile-updated');
     }
+
+
+    public function destroy(User $user):RedirectResponse
+    {
+        $user->deleteQuietly();
+
+        return \redirect("dashboard/crud/users");
+    }
 }
