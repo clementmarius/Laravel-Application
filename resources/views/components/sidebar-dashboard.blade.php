@@ -26,7 +26,7 @@ $a_button_class =
           dark:divide-gray-700
         "
         >
-            <ul class="pb-2 space-y-2">
+            <ul class="mt-5 pb-2 space-y-2">
                 <li>
                     <a
                         href="/dashboard"
@@ -90,28 +90,28 @@ $a_button_class =
                         <li>
                             <a
                                 href="/dashboard/account/profile"
-                                class="<?php echo $_SERVER['REQUEST_URI'] == '/dashboard/account/profile' ? $a_leftactive_class : $a_left_class ?>"
+                                class="<?php echo $_SERVER['REQUEST_URI'] == '/dashboard/account/profile' ? $a_active_class : $a_class ?>"
                                 <?php echo $_SERVER['REQUEST_URI'] == '/dashboard/account/profile' ? 'aria-current="page"' : '' ?>
                             >Profile</a>
                         </li>
                         <li>
                             <a
                                 href="/dashboard/account/email/edit"
-                                class="<?php echo $_SERVER['REQUEST_URI'] == '/dashboard/account/email/edit' ? $a_leftactive_class : $a_left_class ?>"
+                                class="<?php echo $_SERVER['REQUEST_URI'] == '/dashboard/account/email/edit' ? $a_active_class : $a_class ?>"
                                 <?php echo $_SERVER['REQUEST_URI'] == '/dashboard/account/email/edit' ? 'aria-current="page"' : '' ?>
                             >Email</a>
                         </li>
                         <li>
                             <a
                                 href="/dashboard/account/password/edit"
-                                class="<?php echo $_SERVER['REQUEST_URI'] == '/dashboard/account/password/edit' ? $a_leftactive_class : $a_left_class ?>"
+                                class="<?php echo $_SERVER['REQUEST_URI'] == '/dashboard/account/password/edit' ? $a_active_class : $a_class ?>"
                                 <?php echo $_SERVER['REQUEST_URI'] == '/dashboard/account/password/edit' ? 'aria-current="page"' : '' ?>
                             >Password</a>
                         </li>
                         <li>
                             <a
                                 href="/dashboard/account/sessions"
-                                class="<?php echo $_SERVER['REQUEST_URI'] == '/dashboard/account/sessions' ? $a_leftactive_class : $a_left_class ?>"
+                                class="<?php echo $_SERVER['REQUEST_URI'] == '/dashboard/account/sessions' ? $a_active_class : $a_class ?>"
                                 <?php echo $_SERVER['REQUEST_URI'] == '/dashboard/account/sessions' ? 'aria-current="page"' : '' ?>
                             >Sessions</a>
                         </li>
