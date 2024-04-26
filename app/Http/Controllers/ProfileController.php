@@ -58,34 +58,6 @@ class ProfileController extends Controller
 
 
 
-
-//Fonction qui appelle le modele
-
-//    public function showSession(Request $request): View
-//    {
-//
-////        dd(Session::all());
-//
-////        Session::push('created_at', now());
-//
-//        return view('profile/showUserSessions', [
-//
-//            'user' => $request->user(),
-//
-//            'sessions' => Session::all(),
-//        ]);
-//    }
-//
-
-
-//    public function edit(Request $request): View
-//    {
-//        return view('profile.edit', [
-//            'user' => $request->user(),
-//        ]);
-//    }
-
-
     public function editPassword(Request $request): View
     {
         return view('profile/passwordUpdate', [
@@ -99,8 +71,6 @@ class ProfileController extends Controller
             'user' => $request->user(),
         ]);
     }
-
-
 
 
 
@@ -141,6 +111,5 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
-
 
 }
