@@ -10,6 +10,9 @@
                     <a href="/about" class="hover:underline me-4 md:me-6">About</a>
                 </li>
                 <li>
+                    <a href="/contact" class="hover:underline me-4 md:me-6">Contact Us</a>
+                </li>
+                <li>
                     <a href="/faq" class="hover:underline me-4 md:me-6">FAQ</a>
                 </li>
                 <li>

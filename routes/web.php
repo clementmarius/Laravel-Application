@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\IsAdmin;
 use Illuminate\Support\Facades\Route;
 
+//Static pages
+
 Route::get('/', function () {
     return view('pages/welcome');
 });
