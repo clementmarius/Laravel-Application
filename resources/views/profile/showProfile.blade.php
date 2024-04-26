@@ -49,7 +49,7 @@
                         </button>
                     </form>
 
-{{--                    <form action="{{ route('user.destroy', auth()->user()) }}" method="post" class="inline-flex">--}}
+{{--                    <form action="{{ route('profile.destroy', $user }}" method="post" class="inline-flex">--}}
 {{--                        @csrf--}}
 {{--                        @method("delete")--}}
 {{--                        <button onclick="return confirm('Are you sure ?')"--}}

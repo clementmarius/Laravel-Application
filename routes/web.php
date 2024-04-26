@@ -46,8 +46,7 @@ Route::get('dashboard/crud/users/{id}/edit/', [\App\Http\Controllers\UserCrudCon
 
 Route::put('dashboard/crud/users/{id}/edit', [App\Http\Controllers\UserCrudController::class, 'editUsersPost'])->middleware(IsAdmin::class)->name('user.update');
 
-//Piste delete btn
-//Route::get('dashboard/account/profile', [ProfileController::class, 'destroy'])->middleware(isAdmin::class);
+
 
 Route::get('/dashboard', function () {
 
@@ -56,9 +55,14 @@ Route::get('/dashboard', function () {
 
 //Route Account
 
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+//    Route::resource('/profile', ProfileController::class,'profile.destroy');
+    Route::resource('profile', \App\Http\Controllers\ProfileController::class);
+
+//Piste delete btn
+//    Route::get('dashboard/account/profile', [ProfileController::class, 'destroy'])->middleware(isAdmin::class);
 
 
     Route::get('/dashboard/account', function () {return view('profile/account');});
