@@ -58,6 +58,7 @@ class UserCrudController extends Controller
 
     public function destroy(User $user):RedirectResponse
     {
+        dd('123');
         $user->deleteQuietly();
 
         return \redirect("dashboard/crud/users");
