@@ -20,8 +20,6 @@ class UserCrudController extends Controller
 
         return view('dashboard/crud/users', [
             'users' => User::all(),
-//            'roles' => Role::all(),
-//            'users' => User::find(1)->role;
         ]);
     }
 

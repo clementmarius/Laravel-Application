@@ -31,22 +31,11 @@ Route::get('/contact', function () {
     return view('pages/contact');
 });
 
-//exemple d'utilisation middleware
-
-//Route::get('/terms', function () {
-//    return view('pages/terms');
-//})->middleware(isAdmin::class);
-
 
 //Route CRUD
 Route::get('dashboard/crud', function () {return view('dashboard/crud/showCrud');})->middleware(isAdmin::class);
 Route::get('dashboard/crud/articles', function () {return view('dashboard/crud/articles');})->middleware(isAdmin::class);
-
-
-
 Route::resource('user', \App\Http\Controllers\UserCrudController::class);
-
-
 
 //CRUD affichage users :
 Route::get('dashboard/crud/users', [\App\Http\Controllers\UserCrudController::class, 'showUsers'])->middleware(isAdmin::class);
@@ -55,40 +44,21 @@ Route::get('dashboard/crud/users/{id}', [\App\Http\Controllers\UserCrudControlle
 //CRUD Edit Users
 Route::get('dashboard/crud/users/{id}/edit/', [\App\Http\Controllers\UserCrudController::class, 'editUsers'])->middleware(isAdmin::class);
 
-
-//Test Crud edit
-
-//Route::put('dashboard/crud/users/{id}/edit/', [\App\Http\Controllers\UserCrudController::class, 'editUsersPost'])->middleware(isAdmin::class)->name('user.update');
-
-//Route::group(['middleware' => ['auth', 'isAdmin']], function() {
-//    Route::put('dashboard/crud/users/{id}/edit', [App\Http\Controllers\UserCrudController::class, 'editUsersPost'])->name('user.update');
-//});
-
 Route::put('dashboard/crud/users/{id}/edit', [App\Http\Controllers\UserCrudController::class, 'editUsersPost'])->middleware(IsAdmin::class)->name('user.update');
-
-//Route::put('dashboard/crud/users/{id}/edit/',function() {dd("Hello from routes");})->middleware(isAdmin::class)->name('user.update');
-
-//Test Crud Edit
-
-
 
 //Piste delete btn
 //Route::get('dashboard/account/profile', [ProfileController::class, 'destroy'])->middleware(isAdmin::class);
-
 
 Route::get('/dashboard', function () {
 
     return view('dashboard/dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+//Route Account
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-    //Test CRUD DELETE
-//    Route::group(['middleware' => ['auth']], function() {
-//        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-//    });
 
 
     Route::get('/dashboard/account', function () {return view('profile/account');});
