@@ -21,7 +21,7 @@
                 </li>
             </ul>
             <h2 class="mb-4" id="contact">Contact us</h2>
-            <p>If you have any question about this demo, please contact us at contact at saaslit dot com</p>
+            <p>If you have any question about this demo, please <a href="\contact">contact us</a> </p>
             <h2 class="mb-4" id="contact">Signup flow</h2>
             <p>You can go to the <a href="/sign_up">Signup page</a> and create a new account.</p>
             <p>Then to go the fake mailbox <a href="/letter_opener">letter_opener</a> and click on the link to confirm your account</p>
