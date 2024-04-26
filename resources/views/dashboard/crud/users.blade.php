@@ -12,7 +12,13 @@
                     <div>
                         {{--                    <%= f.label :email_cont, class: "sr-only" %>--}}
                         <div class="relative w-48 mt-1 sm:w-64 xl:w-96">
+
+
                             {{--                        <%= f.search_field :email_cont, "data-action": "filters#submit", placeholder: "Search for users", class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" %>--}}
+{{--                                                    <%= f.search_field :email_cont, "data-action": "filters#submit", placeholder: "Search for users",  %>--}}
+                            <input type="text" placeholder="Search for users" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+
+
                         </div>
                     </div>
                     {{--                <% end %>--}}
@@ -126,14 +132,18 @@
                                                   clip-rule="evenodd"></path>
                                         </svg>
                                         Delete item
-                                        <template data-deleter-target="tplt">
-                                            <button
-                                                class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-3 py-2.5 text-center mr-2 dark:focus:ring-red-900">
-                                                Yes, Delete User {{$user->id}}</button>
-                                            {{--                                                <%= button_to "Yes, Delete User ##{user.id}", dashboard_crud_user_path("#{user.id}"), method: :delete, data: {turbo: false}, form_class: "js-deletion-form", class: "text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-3 py-2.5 text-center mr-2 dark:focus:ring-red-900" %>--}}
+
+                                        <template id="delete-tplt" data-deleter-target="tplt">
+                                            <form action="{{ route('user.destroy', $user) }}" method="post"
+                                                  class="inline-flex">
+                                                @csrf
+                                                @method("delete")
+                                                <button
+                                                    class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-3 py-2.5 text-center mr-2 dark:focus:ring-red-900">
+                                                    Yes, Delete User #{{$user->id}}
+                                                </button>
+                                            </form>
                                         </template>
-                                    </button>
-                                    </form>
                                 </td>
                             </tr>
                         @endforeach
@@ -232,14 +242,9 @@
         <div class="flex">
             <div data-controller="prover" class="js-prover">
             </div>
-            <form action="{{ route('user.destroy', $user) }}" method="post" class="inline-flex">
-                @csrf
-                @method("delete")
-                <button
-                    class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-3 py-2.5 text-center mr-2 dark:focus:ring-red-900">
-                    <span>Yes, Delete User #{{$user->id}}</span>
-                </button>
-            </form>
+            <div id="confirm-delete-btn">
+
+            </div>
             <button type="button" data-drawer-dismiss="drawer-delete-user-default"
                     aria-controls="drawer-delete-user-default"
                     class="text-gray-900 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-primary-300 border border-gray-200 font-medium inline-flex items-center rounded-lg text-sm px-3 py-2.5 text-center dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700">
@@ -247,4 +252,14 @@
             </button>
         </div>
     </div>
+    <script>
+        const template = document.querySelector('#delete-tplt');
+        const templateContent = template.content.cloneNode(true);
+    </script>
+
+    <script>
+        const targetElement = document.querySelector('#confirm-delete-btn');
+        targetElement.appendChild(templateContent);
+
+    </script>
 </x-app-layout>
