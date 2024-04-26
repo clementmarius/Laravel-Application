@@ -27,7 +27,7 @@ class IsAdmin
             return $next($request);
         }
 
-        return redirect('/contact');
+        return redirect('/');
     }
 }
 

@@ -173,7 +173,6 @@ $a_button_class =
 
                     </li>
                 @endif
-                {{--                    @endcan--}}
             </ul>
             <div class="pt-2 space-y-2">
                 <a
