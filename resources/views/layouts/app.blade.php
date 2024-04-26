@@ -30,6 +30,7 @@
                         {{$slot}}
 
                     </main>
+                    @include('components/footer-dashboard')
                 </div>
             </div>
 
