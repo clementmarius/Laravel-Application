@@ -61,6 +61,17 @@ Then seed the database, this will create the default roles and default user( mai
 php artisan db:seed
 ```
 
+You can setup mailtrap by copying the laravel 9+ code sample from the integration page in the .env file.
+It should look like this.
+
+```
+MAIL_MAILER=smtp
+MAIL_HOST=live.smtp.mailtrap.io
+MAIL_PORT=587
+MAIL_USERNAME=api
+MAIL_PASSWORD=****
+```
+
 Launch local assets watching & compilation
 
 ```
