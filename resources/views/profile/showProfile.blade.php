@@ -48,10 +48,6 @@
                         </button>
                     </form>
 
-                    <div class="max-w-xl">
-
-                    </div>
-
                 </div>
             </div>
         </div>
