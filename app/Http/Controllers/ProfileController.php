@@ -26,6 +26,7 @@ class ProfileController extends Controller
 
     public function showProfile(Request $request): View
     {
+
         return view('profile/showProfile', [
             'user' => $request->user(),
         ]);

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\IsAdmin;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 //Static pages
@@ -28,6 +29,7 @@ Route::get('/terms', function () {
 });
 
 Route::get('/contact', function () {
+    Mail::to('hulk@marvel.com')->send(new \App\Mail\SampleEmail());
     return view('pages/contact');
 });
 
