@@ -29,7 +29,6 @@ Route::get('/terms', function () {
 });
 
 Route::get('/contact', function () {
-    Mail::to('hulk@marvel.com')->send(new \App\Mail\SampleEmail());
     return view('pages/contact');
 });
 
