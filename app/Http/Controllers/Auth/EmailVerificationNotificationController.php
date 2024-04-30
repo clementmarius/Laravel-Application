@@ -3,10 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Notifications\Messages\MailMessage;
 
 class EmailVerificationNotificationController extends Controller
 {
@@ -22,17 +20,5 @@ class EmailVerificationNotificationController extends Controller
         $request->user()->sendEmailVerificationNotification();
 
         return back()->with('status', 'verification-link-sent');
-    }
-
-    public function boot(): void
-    {
-        // ...
-
-        VerifyEmail::toMailUsing(function (object $notifiable, string $url) {
-            return (new MailMessage)
-                ->subject('Verify Email Address')
-                ->line('It\'s working.')
-                ->action('Verify Email Address', $url);
-        });
     }
 }
