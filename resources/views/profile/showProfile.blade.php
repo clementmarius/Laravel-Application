@@ -47,7 +47,7 @@
                             Yes, Delete My Account
                         </button>
                     </form>
-                    
+
                 </div>
             </div>
         </div>
