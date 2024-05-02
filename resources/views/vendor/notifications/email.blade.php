@@ -1,5 +1,4 @@
 <x-mail::message>
-    <h1>oui ca marche</h1>
 {{-- Greeting --}}
 @if (! empty($greeting))
 # {{ $greeting }}
@@ -7,7 +6,7 @@
 @if ($level === 'error')
 # @lang('Whoops!')
 @else
-# @lang('Hello!')
+# @lang('Hey there!')
 @endif
 @endif
 
@@ -16,6 +15,8 @@
 {{ $line }}
 
 @endforeach
+
+
 
 {{-- Action Button --}}
 @isset($actionText)
