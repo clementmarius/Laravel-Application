@@ -63,7 +63,8 @@ class VerifyEmail extends Notification
     {
         return (new MailMessage)
             ->subject(Lang::get('Verify Email Address'))
-            ->line(Lang::get('This is to confirm that '.auth()->user()->email.' is the email you want to use on your account. If you ever lose your password, that\'s where we\'ll email a reset link.'))
+            ->line(Lang::get('This is to confirm that '. auth()->user()->email .' is the email you want to use on your account. If you ever lose your password, that\'s where we\'ll email a reset link.'))
+            ->line(Lang::get('You must hit the link below to confirm that you received this email.'))
             ->action(Lang::get('Verify Email Address'), $url)
             ->line(Lang::get('If you did not create an account, no further action is required.'));
     }
