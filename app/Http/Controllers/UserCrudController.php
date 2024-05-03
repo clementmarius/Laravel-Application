@@ -68,6 +68,6 @@ class UserCrudController extends Controller
         $search = $request->input('search');
         $results = User::where('email', 'like', "%$search%")->get();
 
-        return view('dashboard.crud.users', ['users' => $results]);
+        return view('components/userSearchTable', ['users' => $results]);
     }
 }

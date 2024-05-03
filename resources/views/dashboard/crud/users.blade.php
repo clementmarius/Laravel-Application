@@ -10,11 +10,15 @@
                 <div class="flex items-center mb-4 sm:mb-0">
 
 
-                    <form action="{{ route('user.search') }}" method="GET">
+                    <form >
                         @csrf
                         <input type="text" name="search" placeholder="Search for users"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                        <button type="submit">Search</button>
+                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                               hx-indicator=".htmx-indicator"
+                               hx-post="{{route('user.search')}}"
+                               hx-target="#usersTable"
+                               hx-trigger="input changed delay:500ms, search"
+                        >
                     </form>
 
                 </div>
@@ -28,7 +32,7 @@
             <div class="inline-block min-w-full align-middle">
                 <div class="overflow-hidden shadow">
                     {{--                <%= turbo_frame_tag "table" do %>--}}
-                    <table class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-600">
+                    <table  id="usersTable" class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-600">
                         <thead class="bg-gray-100 dark:bg-gray-700">
                         <tr>
                             <th scope="col"
