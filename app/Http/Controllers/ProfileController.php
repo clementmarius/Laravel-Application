@@ -104,6 +104,7 @@ class ProfileController extends Controller
         $user->deleteQuietly();
 
 
+        flash('Account successfully destroyed.');
         return Redirect::to('/');
     }
 
