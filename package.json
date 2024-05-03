@@ -9,6 +9,7 @@
         "@vitejs/plugin-vue": "^5.0.4",
         "axios": "^1.6.4",
         "flowbite": "^2.3.0",
+        "htmx.org": "^1.9.12",
         "laravel-vite-plugin": "^1.0.2"
     },
     "devDependencies": {

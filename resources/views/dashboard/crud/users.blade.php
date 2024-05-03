@@ -8,22 +8,22 @@
             </div>
             <div class="items-center justify-between block sm:flex md:divide-x md:divide-gray-100 dark:divide-gray-700">
                 <div class="flex items-center mb-4 sm:mb-0">
-                    {{--                <%= search_form_for @q, url: dashboard_crud_users_path, html: {class: 'sm:pr-3', "data-controller": "filters", "data-turbo-frame": "table"} do |f| %>--}}
-                    <div>
-                        {{--                    <%= f.label :email_cont, class: "sr-only" %>--}}
-                        <div class="relative w-48 mt-1 sm:w-64 xl:w-96">
 
 
-                            {{--                        <%= f.search_field :email_cont, "data-action": "filters#submit", placeholder: "Search for users", class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" %>--}}
-{{--                                                    <%= f.search_field :email_cont, "data-action": "filters#submit", placeholder: "Search for users",  %>--}}
-                            <input type="text" placeholder="Search for users" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                    <form >
+                        @csrf
+                        <input type="text" name="search" placeholder="Search for users"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                               hx-indicator=".htmx-indicator"
+                               hx-post="{{route('user.search')}}"
+                               hx-target="#usersTable"
+                               hx-trigger="input changed delay:500ms, search"
+                        >
+                    </form>
 
-
-                        </div>
-                    </div>
-                    {{--                <% end %>--}}
                 </div>
                 {{--            <%= link_to "Add new user", new_dashboard_crud_user_path, id:"createUserButton", class: "text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800" %>--}}
+                <a href="#"  class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">Add new user</a>
             </div>
         </div>
     </div>
@@ -32,7 +32,7 @@
             <div class="inline-block min-w-full align-middle">
                 <div class="overflow-hidden shadow">
                     {{--                <%= turbo_frame_tag "table" do %>--}}
-                    <table class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-600">
+                    <table  id="usersTable" class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-600">
                         <thead class="bg-gray-100 dark:bg-gray-700">
                         <tr>
                             <th scope="col"
