@@ -62,4 +62,12 @@ class UserCrudController extends Controller
 
         return \redirect("dashboard/crud/users");
     }
+
+    public function searchUsers(Request $request) {
+
+        $search = $request->input('search');
+        $results = User::where('email', 'like', "%$search%")->get();
+
+        return view('dashboard.crud.users', ['users' => $results]);
+    }
 }

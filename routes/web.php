@@ -42,6 +42,10 @@ Route::resource('user', \App\Http\Controllers\UserCrudController::class);
 Route::get('dashboard/crud/users', [\App\Http\Controllers\UserCrudController::class, 'showUsers'])->middleware(isAdmin::class);
 Route::get('dashboard/crud/users/{id}', [\App\Http\Controllers\UserCrudController::class, 'showUsersById'])->middleware(isAdmin::class);
 
+//CRUD Search Bare
+Route::get('dashboard/crud/users', [\App\Http\Controllers\UserCrudController::class, 'searchUsers'])->middleware(isAdmin::class)->name('user.search');
+
+
 //CRUD Edit Users
 Route::get('dashboard/crud/users/{id}/edit/', [\App\Http\Controllers\UserCrudController::class, 'editUsers'])->middleware(isAdmin::class);
 
