@@ -17,9 +17,11 @@ class UserCrudController extends Controller
     public function showUsers(Request $request): View
     {
 
+        $users = User::all();
+        ;
 
         return view('dashboard/crud/users', [
-            'users' => User::all(),
+            'users' => User::orderBy("id","desc")->paginate(10),
         ]);
     }
 
@@ -67,6 +69,7 @@ class UserCrudController extends Controller
 
         $search = $request->input('search');
         $results = User::where('email', 'like', "%$search%")->get();
+//        $results->paginate(10);
 
         return view('components/userSearchTable', ['users' => $results]);
     }
