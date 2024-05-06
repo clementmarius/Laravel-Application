@@ -155,12 +155,10 @@
             </div>
         </div>
     </div>
-{{--    <div class="flex sticky bottom-0 right-0 items-center w-full p-4 bg-white border-t border-gray-200 sm:flex sm:justify-between dark:bg-gray-800 dark:border-gray-700">--}}
-{{--            --}}
-{{--        </div>--}}
 
-        <div class="flex justify-end mb-4 sm:mb-0 sticky bottom-0 right-0 p-4 bg-white border-t border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-            {{ $users->links() }}
+    <div
+        class="flex justify-end mb-4 sm:mb-0 sticky bottom-0 right-0 p-4 bg-white border-t border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+        {{ $users->links() }}
 
     </div>
     <!-- Delete User Drawer -->
